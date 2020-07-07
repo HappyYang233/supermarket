@@ -17,6 +17,130 @@ App({
     }
 
     this.globalData = {
+      goodsCate:[
+        {
+          id:1,
+          name:"零食百味",
+          goodsList:[
+            {
+              goods_id:1,
+              goods_name:"百事薯片",
+              goods_price:10,
+              goods_inventory:100,
+              goods_des:"口味随机",
+              pic:"https://s1.ax1x.com/2020/07/07/UACmSx.jpg"
+            },
+            {
+              goods_id:2,
+              goods_name:"卫龙辣条",
+              goods_price:5,
+              goods_inventory:99,
+              goods_des:"童年的味道",
+              pic:"https://s1.ax1x.com/2020/07/07/UACnl6.jpg"
+            },
+            {
+              goods_id:3,
+              goods_name:"奥利奥",
+              goods_price:7,
+              goods_inventory:200,
+              goods_des:"经典草莓口味",
+              pic:"https://s1.ax1x.com/2020/07/07/UACKOO.jpg"
+            }
+          ]
+        },
+        {
+          id:2,
+          name:"方便速食",
+          goodsList:[
+            {
+              goods_id:1,
+              goods_name:"海底捞小火锅",
+              goods_price:40,
+              goods_inventory:2,
+              goods_des:"正宗四川口味",
+              pic:"https://s1.ax1x.com/2020/07/07/UAC1TH.jpg"
+            },
+            {
+              goods_id:2,
+              goods_name:"康帅傅",
+              goods_price:5,
+              goods_inventory:99,
+              goods_des:"即刻享受美味",
+              pic:"https://s1.ax1x.com/2020/07/07/UACEk9.jpg"
+            },
+            {
+              goods_id:3,
+              goods_name:"鸡腿饭",
+              goods_price:28,
+              goods_inventory:20,
+              goods_des:"超级大鸡腿",
+              pic:"https://s1.ax1x.com/2020/07/07/UACFw4.jpg"
+            }
+          ]
+        },
+        {
+          id:3,
+          name:"饮料果汁",
+          goodsList:[
+            {
+              goods_id:1,
+              goods_name:"零度可乐",
+              goods_price:3,
+              goods_inventory:60,
+              goods_des:"无糖更畅快",
+              pic:"https://s1.ax1x.com/2020/07/07/UACimF.jpg"
+            },
+            {
+              goods_id:2,
+              goods_name:"汇源果汁",
+              goods_price:3,
+              goods_inventory:99,
+              goods_des:"健康美味",
+              pic:"https://s1.ax1x.com/2020/07/07/UACVYR.jpg"
+            },
+            {
+              goods_id:3,
+              goods_name:"营养快线",
+              goods_price:4,
+              goods_inventory:30,
+              goods_des:"即刻补充体力",
+              pic:"https://s1.ax1x.com/2020/07/07/UACl0e.jpg"
+            }
+          ]
+        },
+        {
+          id:4,
+          name:"家居日用",
+          goodsList:[
+            {
+              goods_id:1,
+              goods_name:"纸巾",
+              goods_price:3,
+              goods_inventory:60,
+              goods_des:"中等规格",
+              pic:"https://s1.ax1x.com/2020/07/07/UACQmD.jpg"
+            },
+            {
+              goods_id:2,
+              goods_name:"洁丽雅毛巾",
+              goods_price:15,
+              goods_inventory:99,
+              goods_des:"洁丽雅",
+              pic:"https://s1.ax1x.com/2020/07/07/UACZf1.jpg"
+            },
+            {
+              goods_id:3,
+              goods_name:"垃圾桶",
+              goods_price:12,
+              goods_inventory:30,
+              goods_des:"大容量",
+              pic:"https://s1.ax1x.com/2020/07/07/UACCOU.jpg"
+            }
+          ]
+        },
+
+
+      ],
       // 订单列表
       orderList: [{
         username: '王老五',
@@ -25,28 +149,28 @@ App({
         dateTime: '2020-07-07 14:00:01',
         list: [
           {
-            name: '薯片',
-            price: 12,
+            name: '百事薯片',
+            price: 10,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACmSx.jpg'
           },
           {
-            name: '可乐',
-            price: 5,
+            name: '零度可乐',
+            price: 3,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACimF.jpg'
           },
           {
             name: '纸巾',
-            price: 12,
-            counts: 1,
-            pic: ''
+            price: 3,
+            counts: 3,
+            pic: 'https://s1.ax1x.com/2020/07/07/UACQmD.jpg'
           },
           {
-            name: '套餐盒饭',
-            price: '32',
+            name: '鸡腿饭',
+            price: '20',
             counts: 1,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACFw4.jpg'
           },
           {
             name: '水果拼盘',
@@ -58,7 +182,7 @@ App({
       },
       {
         username: '王老五',
-        id:'1',
+        id:'2',
         stauts: 1,
         dateTime: '2020-07-07 15:00:01',
         list: [
