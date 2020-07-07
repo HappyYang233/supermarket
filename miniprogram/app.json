@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/myinfo/myinfo",
+   
     "pages/index/index",
-    
+     "pages/myinfo/myinfo",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -35,7 +35,8 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-icon": "@vant/weapp/icon/index",
-    "van-image": "@vant/weapp/image/index"
+    "van-image": "@vant/weapp/image/index",
+    "van-tag": "@vant/weapp/tag/index"
   },
   "tabBar": {
     "color": "#999",
