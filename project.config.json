@@ -64,8 +64,13 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
 					"name": "商品",
 					"pathName": "pages/goods/goods",
+=======
+					"name": "pages/orderlist/orderlist",
+					"pathName": "pages/orderlist/orderlist",
+>>>>>>> 4a793fe55a5bac715982ba82028f8f99af520cc4
 					"scene": null
 				}
 			]

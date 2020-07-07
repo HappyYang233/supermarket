@@ -5,14 +5,70 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    active: 0,
+    allOrderLists:[],
+    status: ['待发货', '配送中','已完成'],
+    tagTypeX: ['primary','warning','success']
   },
 
+  tabOnChange(event) {
+    wx.showToast({
+      title: `切换到 ${event.detail.title}`,
+      icon: 'none',
+    });
+    console.log(event)
+  },
+
+  // 获取所有的订单
+  getAllorderLists() {
+    const rawOrderLists = [
+      {
+        fristPic: '../../images/orderlist/taocan.jpg',
+        dateTime: '2020-07-07 14:00:01',
+        price:'22.0',
+        status:0,
+      },
+      {
+        fristPic: '../../images/orderlist/taocan.jpg',
+        dateTime: '2020-07-07 15:00:01',
+        price:'665.1',
+        status:1,
+      },  {
+        fristPic: '../../images/orderlist/taocan.jpg',
+        dateTime: '2020-07-07 16:00:01',
+        price:'85.7',
+        status:1,
+      },  {
+        fristPic: '../../images/orderlist/taocan.jpg',
+        dateTime: '2020-07-07 17:02:01',
+        price:'10.0',
+        status:2,
+      },  {
+        fristPic: '../../images/orderlist/taocan.jpg',
+        dateTime: '2020-07-07 18:00:01',
+        price:'23.0',
+        status:2,
+      },  {
+        fristPic: '../../images/orderlist/taocan.jpg',
+        dateTime: '2020-07-07 19:00:01',
+        price:'78.6',
+        status:0,
+      },  {
+        fristPic: '../../images/orderlist/taocan.jpg',
+        dateTime: '2020-07-07 19:30:22',
+        price:'123.0',
+        status:1,
+      },
+    ]
+    this.setData({
+      allOrderLists: rawOrderLists
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getAllorderLists()
   },
 
   /**

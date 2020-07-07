@@ -1,1 +1,21 @@
 /* pages/orderlist/orderlist.wxss */
+.order-pannel-con {
+  width: 100%;
+  height: 200rpx;
+  background-color: #fff;
+  margin: 40rpx 0 40rpx 0;
+  box-shadow: gary 0px 1px 10px;
+  padding: 30rpx 20rpx 10rpx 20rpx;
+}
+
+.order-img-container {
+  height: 75px;
+  width: 100px;
+}
+.order-intro {
+  font-size: 0.5em;
+  color: darkgrey;
+}
+.order-context {
+  font-size: 0.5em;
+}

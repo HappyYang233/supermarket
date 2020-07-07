@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/myinfo/myinfo",
+   
     "pages/index/index",
+     "pages/myinfo/myinfo",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -40,7 +41,9 @@
     "van-field": "@vant/weapp/field/index",
     "van-sidebar": "@vant/weapp/sidebar/index",
     "van-sidebar-item": "@vant/weapp/sidebar-item/index",
-    "van-card": "@vant/weapp/card/index"
+    "van-card": "@vant/weapp/card/index",
+    "van-tag": "@vant/weapp/tag/index"
+
   },
   "tabBar": {
     "color": "#999",
