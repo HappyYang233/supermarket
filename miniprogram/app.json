@@ -1,7 +1,7 @@
 {
   "pages": [
    
-    "pages/index/index",
+    "pages/goods/goods",
      "pages/myinfo/myinfo",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -16,7 +16,6 @@
     "pages/im/im",
     "pages/im/room/room",
     "pages/orderlist/orderlist",
-    "pages/goods/goods",
     "pages/car/car"
   ],
   "window": {
