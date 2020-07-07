@@ -1,4 +1,5 @@
 //app.js
+
 App({
   onLaunch: function () {
     
@@ -15,6 +16,237 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      // 订单列表
+      orderList: [{
+        username: '王老五',
+        id:'1',
+        stauts: 0,
+        dateTime: '2020-07-07 14:00:01',
+        list: [
+          {
+            name: '薯片',
+            price: 12,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '可乐',
+            price: 5,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '纸巾',
+            price: 12,
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '套餐盒饭',
+            price: '32',
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '水果拼盘',
+            price: '12',
+            counts: 2,
+            pic: ''
+          },
+        ]
+      },
+      {
+        username: '王老五',
+        id:'1',
+        stauts: 1,
+        dateTime: '2020-07-07 15:00:01',
+        list: [
+          {
+            name: '薯片',
+            price: 12,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '可乐',
+            price: 5,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '纸巾',
+            price: 12,
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '套餐盒饭',
+            price: '32',
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '水果拼盘',
+            price: '12',
+            counts: 2,
+            pic: ''
+          },
+        ]
+      },
+      {
+        username: '王老五',
+        id:'1',
+        stauts: 0,
+        dateTime: '2020-07-07 16:00:01',
+        list: [
+          {
+            name: '薯片',
+            price: 12,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '可乐',
+            price: 5,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '纸巾',
+            price: 12,
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '套餐盒饭',
+            price: '32',
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '水果拼盘',
+            price: '12',
+            counts: 2,
+            pic: ''
+          },
+        ]
+      },
+      {
+        username: '王老五',
+        id:'1',
+        stauts: 0,
+        dateTime: '2020-07-07 17:02:01',
+        list: [
+          {
+            name: '薯片',
+            price: 12,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '可乐',
+            price: 5,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '纸巾',
+            price: 12,
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '套餐盒饭',
+            price: '32',
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '水果拼盘',
+            price: '12',
+            counts: 2,
+            pic: ''
+          },
+        ]
+      },
+      {
+        username: '王老五',
+        id:'1',
+        stauts: 0,
+        dateTime: '2020-07-07 18:00:01',
+        list: [
+          {
+            name: '薯片',
+            price: 12,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '可乐',
+            price: 5,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '纸巾',
+            price: 12,
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '套餐盒饭',
+            price: '32',
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '水果拼盘',
+            price: '12',
+            counts: 2,
+            pic: ''
+          },
+        ]
+      },
+      {
+        username: '王老五',
+        id:'1',
+        stauts: 0,
+        dateTime: '2020-07-07 19:00:01',
+        list: [
+          {
+            name: '薯片',
+            price: 12,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '可乐',
+            price: 5,
+            counts: 2,
+            pic: ''
+          },
+          {
+            name: '纸巾',
+            price: 12,
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '套餐盒饭',
+            price: '32',
+            counts: 1,
+            pic: ''
+          },
+          {
+            name: '水果拼盘',
+            price: '12',
+            counts: 2,
+            pic: ''
+          },
+        ]
+      },
+    ]
+    }
   }
 })
