@@ -2,7 +2,6 @@
   "pages": [
     "pages/myinfo/myinfo",
     "pages/index/index",
-    
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -15,7 +14,9 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/orderlist/orderlist"
+    "pages/orderlist/orderlist",
+    "pages/goods/goods",
+    "pages/car/car"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -35,7 +36,11 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-icon": "@vant/weapp/icon/index",
-    "van-image": "@vant/weapp/image/index"
+    "van-image": "@vant/weapp/image/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-sidebar": "@vant/weapp/sidebar/index",
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+    "van-card": "@vant/weapp/card/index"
   },
   "tabBar": {
     "color": "#999",
@@ -45,7 +50,7 @@
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/goods/goods",
         "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-o.png"
@@ -64,5 +69,4 @@
       }
     ]
   }
-  
 }
