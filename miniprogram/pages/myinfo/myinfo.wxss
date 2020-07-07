@@ -61,8 +61,10 @@
   color: darkgrey;
 }
 .myinfo-adv {
-  padding: 40rpx;
+  padding: 0rpx 40rpx;
+  width: 286px;
 }
 .myinfo-adv-pic {
-  width: 100%;
+  width: 286px;
+  height: 80px;
 }
