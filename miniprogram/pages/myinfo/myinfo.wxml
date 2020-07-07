@@ -1,0 +1,79 @@
+<!--index.wxml-->
+<view class="info-container">
+	<view class="info-bg">
+		<view class="userinfo-gai">
+			<van-row>
+				<van-col span="4">
+					<van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+				</van-col>
+				<van-col span="16" offset="4">
+					<view class="userinfo-gai-name">王老五</view>
+				</van-col>
+			</van-row>
+		</view>
+		<view class="info-pan-con">
+			<view class=""></view>
+			<view class="myinfo-pan-con">
+				<view class="service-title">我的服务</view>
+				<van-row>
+					<van-col span="8">
+						<view class="help-items">
+							<van-icon class="help-items-icon" name="location" />
+							<view class="service-items-des">收货地址</view>
+						</view>
+					</van-col>
+					<van-col span="8">
+						<view class="help-items">
+							<van-icon class="help-items-icon" name="service" />
+							<view class="service-items-des">客服和帮助</view>
+						</view>
+					</van-col>
+					<van-col span="8">
+						<view class="help-items">
+							<van-icon class="help-items-icon" name="setting" />
+							<view class="service-items-des">设置</view>
+						</view>
+					</van-col>
+				</van-row>
+			</view>
+		</view>
+		<view class="info-pan-con">
+			<view class="info-order-list">
+				<van-row>
+					<van-col class="service-title" span="8">我的订单</van-col>
+					<van-col span="6" offset="10" class="all-list-entry">全部订单</van-col>
+				</van-row>
+				<van-row>
+					<van-col span="6">
+						<view class="help-items">
+							<van-icon class="help-items-icon" name="shop-collect" />
+							<view class="service-items-des">待发货</view>
+						</view>
+					</van-col>
+					<van-col span="6">
+						<view class="help-items">
+							<van-icon class="help-items-icon" name="send-gift" />
+							<view class="service-items-des">配送中</view>
+						</view>
+					</van-col>
+					<van-col span="6">
+						<view class="help-items">
+							<van-icon class="help-items-icon" name="checked" />
+							<view class="service-items-des">已完成</view>
+						</view>
+					</van-col>
+					<van-col span="6">
+						<view class="help-items">
+							<van-icon class="help-items-icon" name="phone-circle" />
+							<view class="service-items-des">售后/退款</view>
+						</view>
+					</van-col>
+				</van-row>
+			</view>
+
+		</view>
+    <view class="myinfo-adv">
+      <image class="myinfo-adv-pic" src="../../images/static/2.png" />
+    </view>
+	</view>
+</view>
