@@ -15,21 +15,93 @@
 						<view class="order-intro">总价</view>
 						<view class="order-context">{{item.price}}</view>
 					</van-col>
-          	<van-col span="5">
+					<van-col span="5">
 						<view class="order-intro">状态</view>
 						<view class="order-context">
-    
-            <van-tag mark type="{{tagTypeX[item.status]}}">{{status[item.status]}}</van-tag>
-            </view>
-            
+
+							<van-tag mark type="{{tagTypeX[item.status]}}">{{status[item.status]}}</van-tag>
+						</view>
+
 					</van-col>
 				</van-row>
 				<!-- {{status[item.status]}} -->
 
 			</view>
 		</van-tab>
-		<van-tab title="待发货">待发货</van-tab>
-		<van-tab title="配送中">配送中</van-tab>
-		<van-tab title="已完成">已完成</van-tab>
+		<van-tab title="待发货">
+			<view class="order-pannel-con" wx:if="{{item.status == 0}}" wx:for="{{allOrderLists}}">
+				<van-row gutter="10">
+					<van-col span="8">
+						<image class="order-img-container" src="../../images/orderlist/taocan.jpg"></image>
+					</van-col>
+					<van-col span="8">
+						<view class="order-intro">时间</view>
+						<view class="order-context">{{item.dateTime}}</view>
+					</van-col>
+					<van-col span="3">
+						<view class="order-intro">总价</view>
+						<view class="order-context">{{item.price}}</view>
+					</van-col>
+					<van-col span="5">
+						<view class="order-intro">状态</view>
+						<view class="order-context">
+
+							<van-tag mark type="{{tagTypeX[item.status]}}">{{status[item.status]}}</van-tag>
+						</view>
+
+					</van-col>
+				</van-row>
+			</view>
+		</van-tab>
+		<van-tab title="配送中">
+			<view class="order-pannel-con" wx:if="{{item.status == 1}}" wx:for="{{allOrderLists}}">
+				<van-row gutter="10">
+					<van-col span="8">
+						<image class="order-img-container" src="../../images/orderlist/taocan.jpg"></image>
+					</van-col>
+					<van-col span="8">
+						<view class="order-intro">时间</view>
+						<view class="order-context">{{item.dateTime}}</view>
+					</van-col>
+					<van-col span="3">
+						<view class="order-intro">总价</view>
+						<view class="order-context">{{item.price}}</view>
+					</van-col>
+					<van-col span="5">
+						<view class="order-intro">状态</view>
+						<view class="order-context">
+
+							<van-tag mark type="{{tagTypeX[item.status]}}">{{status[item.status]}}</van-tag>
+						</view>
+
+					</van-col>
+				</van-row>
+			</view>
+		</van-tab>
+		<van-tab title="已完成">
+			<view class="order-pannel-con" wx:if="{{item.status == 2}}" wx:for="{{allOrderLists}}">
+				<van-row gutter="10">
+					<van-col span="8">
+						<image class="order-img-container" src="../../images/orderlist/taocan.jpg"></image>
+					</van-col>
+					<van-col span="8">
+						<view class="order-intro">时间</view>
+						<view class="order-context">{{item.dateTime}}</view>
+					</van-col>
+					<van-col span="3">
+						<view class="order-intro">总价</view>
+						<view class="order-context">{{item.price}}</view>
+					</van-col>
+					<van-col span="5">
+						<view class="order-intro">状态</view>
+						<view class="order-context">
+
+							<van-tag mark type="{{tagTypeX[item.status]}}">{{status[item.status]}}</van-tag>
+						</view>
+
+					</van-col>
+				</van-row>
+			</view>
+		</van-tab>
 	</van-tabs>
 </view>
