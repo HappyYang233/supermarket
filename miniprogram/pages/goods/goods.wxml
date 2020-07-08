@@ -15,35 +15,39 @@
 
 	<view class="good_container">
 		<view class="good-content-left">
-			<van-sidebar active-key="{{ activeKey }}"  bind:change="onPageChange">
+			<van-sidebar active-key="{{ activeKey }}" bind:change="onPageChange">
 				<van-sidebar-item title="{{item.name}}" wx:for="{{leftMenuList}}" />
 			</van-sidebar>
 		</view>
 		<scroll-view class="good-content-right" scroll-y="true">
 			<view class="goods-item" wx:if="{{currentPage == 0}}" wx:for="{{snack}}">
 				<van-card tag="热销" price="10.00" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
-					<view slot="footer">
+					<view class="good-extra" slot="footer">
+						<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
 						<van-button size="mini">+</van-button>
 					</view>
 				</van-card>
 			</view>
-      <view class="goods-item" wx:if="{{currentPage == 1}}" wx:for="{{convience}}">
+			<view class="goods-item" wx:if="{{currentPage == 1}}" wx:for="{{convience}}">
 				<van-card tag="热销" price="10.00" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
-					<view slot="footer">
+					<view class="good-extra" slot="footer">
+						<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
 						<van-button size="mini">+</van-button>
 					</view>
 				</van-card>
 			</view>
-      <view class="goods-item" wx:if="{{currentPage == 2}}" wx:for="{{drink}}">
+			<view class="goods-item" wx:if="{{currentPage == 2}}" wx:for="{{drink}}">
 				<van-card tag="热销" price="10.00" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
-					<view slot="footer">
+					<view class="good-extra" slot="footer">
+						<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
 						<van-button size="mini">+</van-button>
 					</view>
 				</van-card>
 			</view>
-      <view class="goods-item" wx:if="{{currentPage == 3}}" wx:for="{{necessity}}">
+			<view class="goods-item" wx:if="{{currentPage == 3}}" wx:for="{{necessity}}">
 				<van-card tag="热销" price="10.00" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
-					<view slot="footer">
+					<view class="good-extra" slot="footer">
+						<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
 						<van-button size="mini">+</van-button>
 					</view>
 				</van-card>
@@ -64,6 +68,6 @@
 			结算
 		</view>
 	</view> -->
-
+  
 
 </view>

@@ -15,6 +15,8 @@
   height: 80rpx;
   width: 640rpx;
   margin: 0 auto;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
 .title span{
   margin-left: 20rpx;
@@ -26,18 +28,7 @@
   margin: 0 auto;
 }
 
-.title {
-  height: 80rpx;
-}
-.title span {
-  margin-left: 20rpx;
-  line-height: 80rpx;
-  color: red;
-}
-.title {
-  padding-left: 20rpx;
-  padding-right: 20rpx;
-}
+
 
 .row {
   width: 100%;
@@ -46,7 +37,7 @@
   margin-left: -85rpx;
 }
 .good_container {
-  width: 500px;
+  /* width: 30px; */
   height: calc(100% - 200rpx);
   /* background-color: lightcoral; */
   /* margin: 240rpx 0rpx; */
@@ -59,8 +50,21 @@
   width: 170rpx;
 }
 .good-content-right {
-  width: 100%;
+  /* width: 100%; */
   /* background-color: rgb(54, 61, 124); */
+}
+.goods_item {
+  /* width: 180px; */
+  position: relative;
+}
+.good-extra {
+  position: absolute;
+  right: 40rpx;
+  top: 10rpx;
+}
+.good-extra-stock {
+  height: 40rpx;
+  line-height: 40rpx;
 }
  .footer_tool {
   position: fixed;

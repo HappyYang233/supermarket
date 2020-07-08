@@ -24,14 +24,7 @@ Page({
       id: 4,
       name: '家居日用'
     }],
-    rightContent: [{
-        goodsName: "德芙巧克力",
-        desc: "纵享丝滑",
-        price: 5,
-        goodsImageUrl: "",
-        id: 1
-      }
-    ]
+    rightContent: []
   },
   handleShowCar() {
     wx.navigateTo({
