@@ -26,6 +26,7 @@ page {
   flex-direction: column;
   justify-content: flex-start;
   background-color: #DDDDDD;
+  height: 100%;
 }
 
 .userinfo, .uploader, .tunnel {

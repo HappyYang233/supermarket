@@ -78,6 +78,12 @@ Page({
     this.setData({
       activePage:active
     })
+    const pages = getCurrentPages()
+              const perpage = pages[pages.length - 1]
+              perpage.onLoad()  
+    // this.setData({
+    //   activePage:active
+    // })
   },
   /**
    * 生命周期函数--监听页面加载

@@ -45,6 +45,7 @@ App({
               goods_inventory:200,
               goods_des:"经典草莓口味",
               pic:"https://s1.ax1x.com/2020/07/07/UACKOO.jpg"
+<<<<<<< HEAD
             },
             {
               goods_id:4,
@@ -70,6 +71,10 @@ App({
               goods_des:"香辣爽脆",
               pic:"https://s1.ax1x.com/2020/07/08/UVZJOA.jpg"
             },
+=======
+            }
+            
+>>>>>>> 317837554145788ba163da98d645917cf64faf48
           ]
         },
         {

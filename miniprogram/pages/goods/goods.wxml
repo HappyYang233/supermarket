@@ -1,77 +1,69 @@
 <view class="wrapper">
-    <view class="top">
-        <view class="title">
-            <span class="color-text">一小时达  </span>
-            天府D区
-        </view>
-        <view class="search-box">
-            <van-cell-group>
-                <van-field
-                  value="{{ sms }}"
-                  center
-                  clearable
-                  placeholder="请输入商品名称"
-                  border="{{ false }}"
-                  use-button-slot
-                >
-                  <van-button slot="button" size="small" type="primary"
-                    >搜索</van-button
-                  >
-                </van-field>
-              </van-cell-group>
+	<view class="top">
+		<view class="title">
+			<span class="color-text">商店信息 </span>
+			天府D区
+		</view>
+		<view class="search-box">
+			<van-cell-group>
+				<van-field value="{{ sms }}" center clearable placeholder="请输入商品名称" border="{{ false }}" use-button-slot>
+					<van-button slot="button" size="small" type="primary">搜索</van-button>
+				</van-field>
+			</van-cell-group>
+		</view>
+	</view>
 
-        </view>
-    </view>
-    <block wx:if="{{leftMenuList!=[]}}">
-        <view class="container" >
-            <van-row class="row" 
-gutter="0">
-                <van-col span="8">
-                    <van-sidebar active-key="{{ activeKey }}">
-                        <van-sidebar-item title="{{item.name}}" 
-                        wx:for="{{leftMenuList}}"
-                        />
-                   
-                      </van-sidebar>
-                </van-col>
-                <van-col span="16" class="right">
-                   <view class="goods-item"
-                   wx:for="{{rightContent}}"
-                   >
-                   <van-card
-                   tag="热销"
-                   price="10.00"
-                   desc="{{item.desc}}"
-                   title="{{item.goodsName}}"
-                   thumb="{{ item.goodsImageUrl }}"
-                 >
-                   <view slot="footer">
-                     <van-button size="mini">+</van-button>
-                   </view>
-                 </van-card>
-                   </view>
-                </van-col>
-        
-              </van-row>
-          
-            
-        </view>
-    </block>
-    <view class="footer_tool">
-        <view class="car" bindtap="handleShowCar">
-            购物车
-        </view>
-        <!-- 总价格 -->
-        <view class="total_price_wrap">
-          <view class="total_price">
-            合计: <text class="total_price_text">1</text>
-          </view>
-        </view>
-        <!-- 结算 -->
-        <view class="order_pay_wrap" bindtap="handlePay" >
-              结算
-        </view>
-      </view>
-      
-   
+	<view class="good_container">
+		<view class="good-content-left">
+			<van-sidebar active-key="{{ activeKey }}"  bind:change="onPageChange">
+				<van-sidebar-item title="{{item.name}}" wx:for="{{leftMenuList}}" />
+			</van-sidebar>
+		</view>
+		<scroll-view class="good-content-right" scroll-y="true">
+			<view class="goods-item" wx:if="{{currentPage == 0}}" wx:for="{{snack}}">
+				<van-card tag="热销" price="10.00" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
+					<view slot="footer">
+						<van-button size="mini">+</van-button>
+					</view>
+				</van-card>
+			</view>
+      <view class="goods-item" wx:if="{{currentPage == 1}}" wx:for="{{convience}}">
+				<van-card tag="热销" price="10.00" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
+					<view slot="footer">
+						<van-button size="mini">+</van-button>
+					</view>
+				</van-card>
+			</view>
+      <view class="goods-item" wx:if="{{currentPage == 2}}" wx:for="{{drink}}">
+				<van-card tag="热销" price="10.00" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
+					<view slot="footer">
+						<van-button size="mini">+</van-button>
+					</view>
+				</van-card>
+			</view>
+      <view class="goods-item" wx:if="{{currentPage == 3}}" wx:for="{{necessity}}">
+				<van-card tag="热销" price="10.00" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
+					<view slot="footer">
+						<van-button size="mini">+</van-button>
+					</view>
+				</van-card>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 
+	<view class="footer_tool">
+		<view class="car" bindtap="handleShowCar">
+			购物车
+		</view>
+		<view class="total_price_wrap">
+			<view class="total_price">
+				合计: <text class="total_price_text">1</text>
+			</view>
+		</view>
+		<view class="order_pay_wrap" bindtap="handlePay">
+			结算
+		</view>
+	</view> -->
+
+
 </view>
