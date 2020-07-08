@@ -100,13 +100,6 @@
 			</view>
 
 		</view>
-<<<<<<< HEAD
-
-=======
-		<view class="order_pay_wrap" bindtap="handlePay">
-			<van-button round type="danger" size="small" bindtap="handlePay">结 算</van-button>
-		</view>
->>>>>>> e6b7bb1abddc25b9023fbf0b83bb0e4d9aed1358
 	</van-popup>
 
 </view>
