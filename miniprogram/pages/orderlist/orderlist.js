@@ -1,4 +1,5 @@
 // pages/orderlist/orderlist.js
+import {checkLogin} from "../../util/comom"
 Page({
 
   /**
@@ -8,7 +9,8 @@ Page({
     activePage: 0,
     allOrderLists:[],
     status: ['待发货', '配送中','已完成'],
-    tagTypeX: ['primary','warning','success']
+    tagTypeX: ['primary','warning','success'],
+    thisPageISshow: true
   },
 
   tabOnChange(event) {
@@ -90,10 +92,46 @@ Page({
    */
 
   onLoad: function (options) {
-    this.getAllorderLists()
+    // if(!checkLogin()){
+    //   //跳转登录页面
+    //  wx.navigateTo({
+    //     url: '../login/login',
+    //     success: (result) => {
+          
+    //     },
+    //     fail: () => {},
+    //     complete: () => {}
+    //   });
+        
+    // }
+    // else{
+      this.getAllorderLists()
+    // }
    
   },
-
+  onTabItemTap(item) {
+    let self = this
+    if (!checkLogin()) {
+      this.setData({
+        thisPageISshow: false
+      });
+      wx.showModal({
+        title: '提示',
+        content: '账号尚未登录，请先登录账号',
+        success: res => {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '../login/login'
+            })
+          } else if (res.cancel) {
+            wx.reLaunch({
+              url: '../goods/goods'
+            })
+          }
+        }
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

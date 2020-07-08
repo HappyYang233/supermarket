@@ -1,4 +1,5 @@
 // miniprogram/pages/goods/goods.js
+import {checkLogin} from "../../util/comom"
 Page({
 
   /**
@@ -163,6 +164,33 @@ Page({
     wx.setStorageSync('shopCart', listRaw);
     this.getShopCart()
   },
+  handlePay(){
+     if(!checkLogin()){
+       //跳转登录页面
+      wx.navigateTo({
+         url: '../login/login',
+         success: (result) => {
+           
+         },
+         fail: () => {},
+         complete: () => {}
+       });
+         
+     }
+     else
+     {
+       wx.navigateTo({
+         url: '../pay/pay',
+         success: (result) => {
+           
+         },
+         fail: () => {},
+         complete: () => {}
+       });
+         
+       //继续流程
+     }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -170,7 +198,28 @@ Page({
     this.getAllGoods()
     this.getShopCart()
   },
+  // onTabItemTap(item) {
+  //   let self = this
+  //   console.log(1123);
 
+  //   if (!checkLogin()) {
+  //     wx.showModal({
+  //       title: '提示',
+  //       content: '账号尚未登录，请先登录账号',
+  //       success: res => {
+  //         if (res.confirm) {
+  //           wx.navigateTo({
+  //             url: '../login/login'
+  //           })
+  //         } else if (res.cancel) {
+  //           wx.reLaunch({
+  //             url: '../goods/goods'
+  //           })
+  //         }
+  //       }
+  //     })
+  //   }
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -212,7 +261,6 @@ Page({
   onReachBottom: function () {
 
   },
-
   /**
    * 用户点击右上角分享
    */
