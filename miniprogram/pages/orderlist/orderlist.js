@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active: 0,
+    activePage: 0,
     allOrderLists:[],
     status: ['待发货', '配送中','已完成'],
     tagTypeX: ['primary','warning','success']
@@ -74,8 +74,9 @@ Page({
   },
   onShow: function () {
     let active = this.getActive();
+    active=Number(active);
     this.setData({
-      active:active
+      activePage:active
     })
   },
   /**
