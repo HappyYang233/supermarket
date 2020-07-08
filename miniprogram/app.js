@@ -45,7 +45,31 @@ App({
               goods_inventory:200,
               goods_des:"经典草莓口味",
               pic:"https://s1.ax1x.com/2020/07/07/UACKOO.jpg"
-            }
+            },
+            {
+              goods_id:4,
+              goods_name:"益达口香糖",
+              goods_price:7,
+              goods_inventory:200,
+              goods_des:"经典薄荷口味",
+              pic:"https://s1.ax1x.com/2020/07/08/UVZQJO.jpg"
+            },
+            {
+              goods_id:5,
+              goods_name:"港荣蒸蛋糕",
+              goods_price:28,
+              goods_inventory:20,
+              goods_des:"小小面包",
+              pic:"https://s1.ax1x.com/2020/07/08/UVZ3Se.jpg"
+            },
+            {
+              goods_id:6,
+              goods_name:"泡椒凤爪",
+              goods_price:12,
+              goods_inventory:30,
+              goods_des:"香辣爽脆",
+              pic:"https://s1.ax1x.com/2020/07/08/UVZJOA.jpg"
+            },
           ]
         },
         {
@@ -75,7 +99,32 @@ App({
               goods_inventory:20,
               goods_des:"超级大鸡腿",
               pic:"https://s1.ax1x.com/2020/07/07/UACFw4.jpg"
-            }
+            },
+            {
+              goods_id:4,
+              goods_name:"Q趣",
+              goods_price:28,
+              goods_inventory:70,
+              goods_des:"泡面一绝",
+              pic:"https://s1.ax1x.com/2020/07/08/UVZlWD.jpg"
+            },
+            {
+              goods_id:5,
+              goods_name:"光友粉丝",
+              goods_price:5,
+              goods_inventory:120,
+              goods_des:"6666",
+              pic:"https://s1.ax1x.com/2020/07/08/UVZ8QH.jpg"
+            },
+            {
+              goods_id:6,
+              goods_name:"火鸡面",
+              goods_price:5,
+              goods_inventory:66,
+              goods_des:"韩国超辣火鸡面",
+              pic:"https://s1.ax1x.com/2020/07/08/UVZGyd.jpg"
+            },
+
           ]
         },
         {
