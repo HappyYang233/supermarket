@@ -17,10 +17,34 @@
 				<view class="service-title">我的服务</view>
 				<van-row>
 					<van-col span="8">
-						<view class="help-items">
-							<van-icon class="help-items-icon" name="location" />
-							<view class="service-items-des" bindtap="">收货地址</view>
+						<view class="help-items" >
+							<van-icon class="help-items-icon" name="location" bindtap="handleAddressDailog" />
+							<view class="service-items-des" >收货地址</view>
+							<!-- 地址修改表单弹出框 -->
+							<van-dialog
+							use-slot
+							title="地址/修改地址"
+							show="{{ addressShow }}"
+							
+							confirm-button-open-type="getUserInfo"
+							bind:close="onClose"
+							bind:getuserinfo="getUserInfo"
+							>
+								<input type="text" disabled value="{{address}}"/>
+								<input
+									value="{{tempAddress}}"
+									center
+									placeholder="请输入新地址"
+									bindinput="bindName"
+								/>
+								<van-button  size="small" type="primary" bindtap="handleEditAddress"
+								>确认修改</van-button
+								>
+								
+							 
+							</van-dialog>
 						</view>
+						
 					</van-col>
 					<van-col span="8">
 						<view class="help-items">
@@ -41,7 +65,7 @@
 			<view class="info-order-list">
 				<van-row>
 					<van-col class="service-title" span="8">我的订单</van-col>
-					<van-col span="6" offset="10" class="all-list-entry">全部订单</van-col>
+					<van-col span="6" offset="10" class="all-list-entry" bindtap="handleToOrder" data-status="0">全部订单</van-col>
 				</van-row>
 				<van-row>
 					<van-col span="6">

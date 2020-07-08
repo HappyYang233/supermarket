@@ -17,6 +17,7 @@ App({
     }
 
     this.globalData = {
+      address:"天府新区新经济产业园区D区A1号楼",
       goodsCate:[
         {
           id:1,
@@ -45,7 +46,6 @@ App({
               goods_inventory:200,
               goods_des:"经典草莓口味",
               pic:"https://s1.ax1x.com/2020/07/07/UACKOO.jpg"
-
             },
             {
               goods_id:4,
@@ -71,10 +71,6 @@ App({
               goods_des:"香辣爽脆",
               pic:"https://s1.ax1x.com/2020/07/08/UVZJOA.jpg"
             },
-
-            
-            
-
           ]
         },
         {

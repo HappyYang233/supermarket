@@ -7,17 +7,23 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    addressShow:false,
+    address:'',
+    tempAddress:''
   },
 
   onLoad: function() {
+    let address = app.globalData.address;
+    this.setData({
+      address:address
+    })
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
       })
       return
     }
-  
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -124,6 +130,34 @@ Page({
     wx.switchTab({
       url: '../orderlist/orderlist',
     });
+  },
+  handleAddressDailog(e){
+      this.setData({
+        addressShow:true
+      })
+  },
+  onClose(){
+    this.setData({
+      addressShow:false
+    })
+  },
+  handleEditAddress(e){
+    console.log(2);
+      let address = this.data.tempAddress;
+
+      console.log(address);
+      app.globalData.address=address;
+      this.setData({
+        address:address,
+        tempAddress:''
+      });
+  },
+  bindName(e){
+    console.log(11111);
+    let tempAddress= e.detail.value;
+    this.setData({
+      tempAddress:tempAddress
+    })
   }
 
 })
