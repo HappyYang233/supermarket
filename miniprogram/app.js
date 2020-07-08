@@ -46,6 +46,7 @@ App({
               goods_des:"经典草莓口味",
               pic:"https://s1.ax1x.com/2020/07/07/UACKOO.jpg"
             }
+            
           ]
         },
         {

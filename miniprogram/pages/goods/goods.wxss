@@ -1,35 +1,68 @@
 .wrapper {
   height: 100%;
+  background-color: #fff;
 }
-.wrapper .top {
+.top {
+  height: 200rpx;
   width: 100%;
+  background-color: #ddd;
+  line-height: 80rpx;
+  color: red;
+  position: fixed;
+  z-index: 100;
 }
-.wrapper .top .title {
+.title {
   height: 80rpx;
+  width: 640rpx;
+  margin: 0 auto;
 }
-.wrapper .top .title span {
+.title span{
   margin-left: 20rpx;
   line-height: 80rpx;
   color: red;
 }
-.wrapper .top .title .search-box {
+.search-box {
+  width: 640rpx;
+  margin: 0 auto;
+}
+
+.title {
+  height: 80rpx;
+}
+.title span {
+  margin-left: 20rpx;
+  line-height: 80rpx;
+  color: red;
+}
+.title {
   padding-left: 20rpx;
   padding-right: 20rpx;
 }
-.wrapper .top .search-box {
-  padding-left: 20rpx;
-  padding-right: 20rpx;
-}
-.wrapper .container {
+
+.row {
   width: 100%;
 }
-.wrapper .container .row {
-  width: 100%;
-}
-.wrapper .container .row .right {
+.row .right {
   margin-left: -85rpx;
 }
-.wrapper .footer_tool {
+.good_container {
+  width: 500px;
+  height: calc(100% - 200rpx);
+  /* background-color: lightcoral; */
+  /* margin: 240rpx 0rpx; */
+  /* padding: 200rpx 0rpx rpx 0rpx ; */
+  padding-top: 200rpx;
+  display: flex;
+ 
+}
+.good-content-left  {
+  width: 170rpx;
+}
+.good-content-right {
+  width: 100%;
+  /* background-color: rgb(54, 61, 124); */
+}
+ .footer_tool {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -39,32 +72,31 @@
   display: flex;
   border-top: 1rpx solid #ccc;
 }
-.wrapper .footer_tool .car {
+.footer_tool .car {
   flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #black;
+  color: black;
   font-size: 32rpx;
   font-weight: 600;
-  background-color: var(--themeColor);
 }
-.wrapper .footer_tool .total_price_wrap {
+.footer_tool .total_price_wrap {
   flex: 5;
   display: flex;
   text-align: left;
   justify-content: center;
   align-items: center;
 }
-.wrapper .footer_tool .total_price_wrap .total_price .total_price_text {
-  color: #black;
+.footer_tool .total_price_wrap .total_price .total_price_text {
+  color: black;
   font-size: 34rpx;
   font-weight: 600;
 }
-.wrapper .footer_tool .order_pay_wrap {
+.footer_tool .order_pay_wrap {
   flex: 3;
-  background-color: var(--themeColor);
-  color: #black;
+  /* background-color: var(--themeColor); */
+  color: black;
   font-size: 32rpx;
   font-weight: 600;
   display: flex;
