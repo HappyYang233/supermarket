@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    shopCartLists:{},
+    CartListShow: false,
     currentPage: 0,
     allGoodsLists: [],
     snack: [],
@@ -27,19 +29,57 @@ Page({
     rightContent: []
   },
   handleShowCar() {
-    wx.navigateTo({
-      url: '../car/car',
-      success: (result) => {
+    // wx.navigateTo({
+    //   url: '../car/car',
+    //   success: (result) => {
 
-      },
-      fail: () => {},
-      complete: () => {}
-    });
-
+    //   },
+    //   fail: () => {},
+    //   complete: () => {}
+    // });
   },
   onPageChange(event) {
     this.setData({
       currentPage: event.detail
+    })
+  },
+  onAddGood(e) {
+    let pickedGood = e.currentTarget.dataset.pickedgood
+    pickedGood.counts = 1
+    pickedGood.sum = pickedGood.goods_price
+    let pickedgoodid = pickedGood.goods_id
+    let cart = wx.getStorageSync("shopCart") || [];
+    let hasGood = false
+    let goodindex = -1
+    cart.forEach((item, index) => {
+      if (pickedgoodid == item.goods_id) {
+        hasGood = true
+        goodindex = index
+      }
+    })
+    if (hasGood) {
+      cart[goodindex].counts += 1
+      cart[goodindex].sum += pickedGood.goods_price
+    } else {
+      cart.push(pickedGood)
+    }
+    wx.setStorageSync('shopCart', cart);
+    this.getShopCart()
+  },
+  getShopCart() {
+    let shopcart = wx.getStorageSync("shopCart") || []
+    let len = shopcart.length
+    let sumPrice = 0
+    shopcart.forEach(ele=> {
+      sumPrice += ele.sum
+    })
+    let shopCartRes = {
+      sumPrice,
+      length: len,
+      goods:shopcart
+    }
+    this.setData({
+      shopCartLists:shopCartRes
     })
   },
   getAllGoods() {
@@ -76,11 +116,22 @@ Page({
       }
     })
   },
+  onCartClick() {
+    this.setData({
+      CartListShow: true
+    })
+  },
+  onCartListClose() {
+    this.setData({
+      CartListShow: false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getAllGoods()
+    this.getShopCart()
   },
 
   /**
