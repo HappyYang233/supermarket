@@ -1,5 +1,5 @@
 <!--pages/orderlist/orderlist.wxml-->
-<view class="order-list-container">
+<view class="order-list-container" wx:if="{{thisPageISshow}}">
 	<van-tabs active="{{ activePage }}" bind:change="tabOnChange">
 		<van-tab title="全部">
 			<view class="order-pannel-con" wx:for="{{allOrderLists}}">

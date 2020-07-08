@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="info-container">
+<view wx:if="{{thisPageISshow}}" class="info-container">
 	<view class="info-bg">
 		<view class="userinfo-gai">
 			<van-row>

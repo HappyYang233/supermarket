@@ -16,7 +16,9 @@
     "pages/im/im",
     "pages/im/room/room",
     "pages/orderlist/orderlist",
-    "pages/car/car"
+    "pages/car/car",
+    "pages/login/login",
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

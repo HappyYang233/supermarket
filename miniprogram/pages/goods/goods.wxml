@@ -78,7 +78,7 @@
 			</view>
 		</view>
 		<view class="order_pay_wrap" bindtap="handlePay">
-			<van-button round type="danger" size="small">结 算</van-button>
+			<van-button round type="danger" size="small" bindtap="handlePay">结 算</van-button>
 		</view>
 	</van-popup>
 

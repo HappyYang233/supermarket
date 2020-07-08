@@ -1,8 +1,10 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -18,21 +20,26 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		},
-		"useIsolateContext": true,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
+		}
 	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.1",
 	"appid": "wxcf933dc90ac989de",
 	"projectname": "mtiantou",
-	"libVersion": "2.8.1",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"cloudfunctionTemplateRoot": "",
+	"watchOptions": {
+		"ignore": []
+	},
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -54,7 +61,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
@@ -64,13 +71,9 @@
 				},
 				{
 					"id": -1,
-<<<<<<< HEAD
 					"name": "商品",
 					"pathName": "pages/goods/goods",
-=======
-					"name": "pages/orderlist/orderlist",
-					"pathName": "pages/orderlist/orderlist",
->>>>>>> 4a793fe55a5bac715982ba82028f8f99af520cc4
+					"query": "",
 					"scene": null
 				}
 			]

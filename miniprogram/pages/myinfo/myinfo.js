@@ -1,4 +1,5 @@
 //index.js
+import {checkLogin} from "../../util/comom"
 const app = getApp()
 
 Page({
@@ -10,10 +11,52 @@ Page({
     requestResult: '',
     addressShow:false,
     address:'',
-    tempAddress:''
+    tempAddress:'',
+    thisPageISshow: true
   },
+  onTabItemTap(item) {
+    console.log(123)
+    let self = this;
+    if (!checkLogin()) {
+      console.log('xxx')
+      this.setData({
+        thisPageISshow: false
+      })
+      wx.showModal({
+        title: '提示',
+        content: '账号尚未登录，请先登录账号',
+        success: res => {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '../login/login'
+            })
+          } else if (res.cancel) {
+            wx.reLaunch({
+              url: '../goods/goods'
+            })
+          }
+        }
+      })
+    } else {
+      this.setData({
+        thisPageISshow: true
+      })
+    }
 
+  },
   onLoad: function() {
+    // if(!checkLogin()){
+    //   //跳转登录页面
+    //  wx.navigateTo({
+    //     url: '../login/login',
+    //     success: (result) => {
+          
+    //     },
+    //     fail: () => {},
+    //     complete: () => {}
+    //   });
+        
+    // }
     let address = app.globalData.address;
     this.setData({
       address:address
