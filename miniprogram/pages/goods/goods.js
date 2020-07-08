@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    shopCartLists:{},
+    buyResult: [],
+    shopCartLists: {},
     CartListShow: false,
     currentPage: 0,
     allGoodsLists: [],
@@ -28,6 +29,7 @@ Page({
     }],
     rightContent: []
   },
+  onBuyChange() {},
   handleShowCar() {
     // wx.navigateTo({
     //   url: '../car/car',
@@ -70,16 +72,16 @@ Page({
     let shopcart = wx.getStorageSync("shopCart") || []
     let len = shopcart.length
     let sumPrice = 0
-    shopcart.forEach(ele=> {
+    shopcart.forEach(ele => {
       sumPrice += ele.sum
     })
     let shopCartRes = {
       sumPrice,
       length: len,
-      goods:shopcart
+      goods: shopcart
     }
     this.setData({
-      shopCartLists:shopCartRes
+      shopCartLists: shopCartRes
     })
   },
   getAllGoods() {
@@ -125,6 +127,41 @@ Page({
     this.setData({
       CartListShow: false
     })
+  },
+  downCounts(e) {
+    let id = e.currentTarget.dataset.downcounts
+    console.log(this.data.shopCartLists.goods)
+
+    const listRaw = JSON.parse(JSON.stringify(this.data.shopCartLists.goods))
+    listRaw.forEach((ele, index) => {
+      if (ele.goods_id == id && ele.counts > 1) {
+        ele.counts--
+        ele.sum -= ele.goods_price
+      } else if (ele.goods_id == id && ele.counts == 1) {
+        listRaw.splice(index, 1)
+        ele.sum = 0
+      } else {
+        return
+      }
+    })
+    wx.setStorageSync('shopCart', listRaw);
+    this.getShopCart()
+  },
+  upCounts(e) {
+    let id = e.currentTarget.dataset.upcounts
+    console.log(this.data.shopCartLists.goods)
+
+    const listRaw = JSON.parse(JSON.stringify(this.data.shopCartLists.goods))
+    listRaw.forEach((ele, index) => {
+      if (ele.goods_id == id) {
+        ele.counts++
+        ele.sum += ele.goods_price
+      }  else {
+        return
+      }
+    })
+    wx.setStorageSync('shopCart', listRaw);
+    this.getShopCart()
   },
   /**
    * 生命周期函数--监听页面加载
