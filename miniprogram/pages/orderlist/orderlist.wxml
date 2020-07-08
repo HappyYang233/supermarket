@@ -1,6 +1,6 @@
 <!--pages/orderlist/orderlist.wxml-->
 <view class="order-list-container">
-	<van-tabs active="{{ active }}" bind:change="tabOnChange">
+	<van-tabs active="{{ activePage }}" bind:change="tabOnChange">
 		<van-tab title="全部">
 			<view class="order-pannel-con" wx:for="{{allOrderLists}}">
 				<van-row gutter="10">

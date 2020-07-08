@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active: 0,
+    activePage: 0,
     allOrderLists:[],
     status: ['待发货', '配送中','已完成'],
     tagTypeX: ['primary','warning','success']
@@ -74,8 +74,9 @@ Page({
   },
   onShow: function () {
     let active = this.getActive();
-    wx.nextTick(() => {
-      this.setData({ activePage:active }) // 在当前同步流程结束后，下一个时间片执行
+    active=Number(active);
+    this.setData({
+      activePage:active
     })
     const pages = getCurrentPages()
               const perpage = pages[pages.length - 1]
