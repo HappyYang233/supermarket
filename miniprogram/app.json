@@ -45,7 +45,8 @@
     "van-divider": "@vant/weapp/divider/index",
     "van-popup": "@vant/weapp/popup/index",
     "van-field": "@vant/weapp/field/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-popup": "@vant/weapp/popup/index"
 
   },
   "tabBar": {

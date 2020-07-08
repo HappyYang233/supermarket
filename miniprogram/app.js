@@ -24,7 +24,8 @@ App({
           name:"零食百味",
           goodsList:[
             {
-              goods_id:1,
+              id:1,
+              goods_id:101,
               goods_name:"百事薯片",
               goods_price:10,
               goods_inventory:100,
@@ -32,7 +33,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UACmSx.jpg"
             },
             {
-              goods_id:2,
+              id:1,
+              goods_id:102,
               goods_name:"卫龙辣条",
               goods_price:5,
               goods_inventory:99,
@@ -40,7 +42,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UACnl6.jpg"
             },
             {
-              goods_id:3,
+              id:1,
+              goods_id:103,
               goods_name:"奥利奥",
               goods_price:7,
               goods_inventory:200,
@@ -48,7 +51,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UACKOO.jpg"
             },
             {
-              goods_id:4,
+              id:1,
+              goods_id:104,
               goods_name:"益达口香糖",
               goods_price:7,
               goods_inventory:200,
@@ -56,7 +60,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/08/UVZQJO.jpg"
             },
             {
-              goods_id:5,
+              id:1,
+              goods_id:105,
               goods_name:"港荣蒸蛋糕",
               goods_price:28,
               goods_inventory:20,
@@ -64,7 +69,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/08/UVZ3Se.jpg"
             },
             {
-              goods_id:6,
+              id:1,
+              goods_id:106,
               goods_name:"泡椒凤爪",
               goods_price:12,
               goods_inventory:30,
@@ -78,7 +84,8 @@ App({
           name:"方便速食",
           goodsList:[
             {
-              goods_id:1,
+              id:2,
+              goods_id:201,
               goods_name:"海底捞小火锅",
               goods_price:40,
               goods_inventory:2,
@@ -86,7 +93,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UAC1TH.jpg"
             },
             {
-              goods_id:2,
+              id:2,
+              goods_id:202,
               goods_name:"康帅傅",
               goods_price:5,
               goods_inventory:99,
@@ -94,7 +102,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UACEk9.jpg"
             },
             {
-              goods_id:3,
+              id:2,
+              goods_id:203,
               goods_name:"鸡腿饭",
               goods_price:28,
               goods_inventory:20,
@@ -102,7 +111,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UACFw4.jpg"
             },
             {
-              goods_id:4,
+              id:2,
+              goods_id:204,
               goods_name:"Q趣",
               goods_price:28,
               goods_inventory:70,
@@ -110,7 +120,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/08/UVZlWD.jpg"
             },
             {
-              goods_id:5,
+              id:2,
+              goods_id:205,
               goods_name:"光友粉丝",
               goods_price:5,
               goods_inventory:120,
@@ -118,7 +129,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/08/UVZ8QH.jpg"
             },
             {
-              goods_id:6,
+              id:2,
+              goods_id:206,
               goods_name:"火鸡面",
               goods_price:5,
               goods_inventory:66,
@@ -133,7 +145,8 @@ App({
           name:"饮料果汁",
           goodsList:[
             {
-              goods_id:1,
+              id:3,
+              goods_id:301,
               goods_name:"零度可乐",
               goods_price:3,
               goods_inventory:60,
@@ -141,7 +154,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UACimF.jpg"
             },
             {
-              goods_id:2,
+              id:3,
+              goods_id:302,
               goods_name:"汇源果汁",
               goods_price:3,
               goods_inventory:99,
@@ -149,7 +163,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UACVYR.jpg"
             },
             {
-              goods_id:3,
+              id:3,
+              goods_id:303,
               goods_name:"营养快线",
               goods_price:4,
               goods_inventory:30,
@@ -163,7 +178,8 @@ App({
           name:"家居日用",
           goodsList:[
             {
-              goods_id:1,
+              id:4,
+              goods_id:401,
               goods_name:"洁柔纸巾",
               goods_price:3,
               goods_inventory:60,
@@ -171,7 +187,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UACQmD.jpg"
             },
             {
-              goods_id:2,
+              id:4,
+              goods_id:402,
               goods_name:"洁丽雅毛巾",
               goods_price:15,
               goods_inventory:99,
@@ -179,7 +196,8 @@ App({
               pic:"https://s1.ax1x.com/2020/07/07/UACZf1.jpg"
             },
             {
-              goods_id:3,
+              id:4,
+              goods_id:403,
               goods_name:"垃圾桶",
               goods_price:12,
               goods_inventory:30,

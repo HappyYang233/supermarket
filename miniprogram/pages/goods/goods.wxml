@@ -24,7 +24,7 @@
 				<van-card tag="热销" price="10.00" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
 					<view class="good-extra" slot="footer">
 						<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
-						<van-button size="mini">+</van-button>
+						<van-button size="mini" bindtap="onAddGood" data-pickedgood="{{item}}">+</van-button>
 					</view>
 				</van-card>
 			</view>
@@ -54,20 +54,32 @@
 			</view>
 		</scroll-view>
 	</view>
-	<!-- 
+
 	<view class="footer_tool">
-		<view class="car" bindtap="handleShowCar">
-			购物车
+		<view class="shopping-cart">
+			<van-icon bindtap="onCartClick" name="shopping-cart-o" info="{{shopCartLists.length || 0}}" />
 		</view>
 		<view class="total_price_wrap">
 			<view class="total_price">
-				合计: <text class="total_price_text">1</text>
+				合计: <text class="total_price_text">{{shopCartLists.sumPrice}} 元</text>
 			</view>
 		</view>
 		<view class="order_pay_wrap" bindtap="handlePay">
-			结算
+			<van-button round type="danger" size="small">结 算</van-button>
 		</view>
-	</view> -->
-  
+	</view>
+
+
+
+	<van-popup position="bottom" custom-style="height: 50%;" show="{{ CartListShow }}" bind:close="onCartListClose">
+		<view class="total_price_wrap">
+			<view class="total_price">
+				合计: <text class="total_price_text">{{shopCartLists.sumPrice}} 元</text>
+			</view>
+		</view>
+		<view class="order_pay_wrap" bindtap="handlePay">
+			<van-button round type="danger" size="small">结 算</van-button>
+		</view>
+	</van-popup>
 
 </view>
