@@ -114,7 +114,7 @@ App({
           goodsList:[
             {
               goods_id:1,
-              goods_name:"纸巾",
+              goods_name:"洁柔纸巾",
               goods_price:3,
               goods_inventory:60,
               goods_des:"中等规格",
@@ -172,12 +172,6 @@ App({
             counts: 1,
             pic: 'https://s1.ax1x.com/2020/07/07/UACFw4.jpg'
           },
-          {
-            name: '水果拼盘',
-            price: '12',
-            counts: 2,
-            pic: ''
-          },
         ]
       },
       {
@@ -187,35 +181,29 @@ App({
         dateTime: '2020-07-07 15:00:01',
         list: [
           {
-            name: '薯片',
-            price: 12,
+            name: '百事薯片',
+            price: 10,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACmSx.jpg'
           },
           {
-            name: '可乐',
-            price: 5,
+            name: '零度可乐',
+            price: 3,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACimF.jpg'
           },
           {
-            name: '纸巾',
-            price: 12,
+            name: '鸡腿饭',
+            price: '20',
             counts: 1,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACFw4.jpg'
           },
           {
-            name: '套餐盒饭',
-            price: '32',
-            counts: 1,
-            pic: ''
-          },
-          {
-            name: '水果拼盘',
-            price: '12',
+            name: '洁柔纸巾',
+            price: '3',
             counts: 2,
-            pic: ''
-          },
+            pic: 'https://s1.ax1x.com/2020/07/07/UACQmD.jpg'
+          }
         ]
       },
       {
@@ -225,35 +213,29 @@ App({
         dateTime: '2020-07-07 16:00:01',
         list: [
           {
-            name: '薯片',
-            price: 12,
+            name: '零度可乐',
+            price: 3,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACimF.jpg'
           },
           {
-            name: '可乐',
-            price: 5,
+            name: '百事薯片',
+            price: 10,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACmSx.jpg'
           },
           {
             name: '纸巾',
-            price: 12,
-            counts: 1,
-            pic: ''
+            price: 3,
+            counts: 3,
+            pic: 'https://s1.ax1x.com/2020/07/07/UACQmD.jpg'
           },
           {
-            name: '套餐盒饭',
-            price: '32',
+            name: '鸡腿饭',
+            price: '20',
             counts: 1,
-            pic: ''
-          },
-          {
-            name: '水果拼盘',
-            price: '12',
-            counts: 2,
-            pic: ''
-          },
+            pic: 'https://s1.ax1x.com/2020/07/07/UACFw4.jpg'
+          }
         ]
       },
       {
@@ -263,34 +245,28 @@ App({
         dateTime: '2020-07-07 17:02:01',
         list: [
           {
-            name: '薯片',
-            price: 12,
-            counts: 2,
-            pic: ''
+            name: '洁柔纸巾',
+            price: 3,
+            counts: 3,
+            pic: 'https://s1.ax1x.com/2020/07/07/UACQmD.jpg'
           },
           {
-            name: '可乐',
-            price: 5,
+            name: '零度可乐',
+            price: 3,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACimF.jpg'
           },
           {
-            name: '纸巾',
-            price: 12,
+            name: '百事薯片',
+            price: 10,
+            counts: 2,
+            pic: 'https://s1.ax1x.com/2020/07/07/UACmSx.jpg'
+          },
+          {
+            name: '鸡腿饭',
+            price: '20',
             counts: 1,
-            pic: ''
-          },
-          {
-            name: '套餐盒饭',
-            price: '32',
-            counts: 1,
-            pic: ''
-          },
-          {
-            name: '水果拼盘',
-            price: '12',
-            counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACFw4.jpg'
           },
         ]
       },
@@ -301,35 +277,29 @@ App({
         dateTime: '2020-07-07 18:00:01',
         list: [
           {
-            name: '薯片',
-            price: 12,
-            counts: 2,
-            pic: ''
-          },
-          {
-            name: '可乐',
-            price: 5,
-            counts: 2,
-            pic: ''
-          },
-          {
-            name: '纸巾',
-            price: 12,
+            name: '鸡腿饭',
+            price: '20',
             counts: 1,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACFw4.jpg'
           },
           {
-            name: '套餐盒饭',
-            price: '32',
-            counts: 1,
-            pic: ''
-          },
-          {
-            name: '水果拼盘',
-            price: '12',
+            name: '零度可乐',
+            price: 3,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACimF.jpg'
           },
+          {
+            name: '百事薯片',
+            price: 10,
+            counts: 2,
+            pic: 'https://s1.ax1x.com/2020/07/07/UACmSx.jpg'
+          },
+          {
+            name: '洁柔纸巾',
+            price: '3',
+            counts: 2,
+            pic: 'https://s1.ax1x.com/2020/07/07/UACQmD.jpg'
+          }
         ]
       },
       {
@@ -339,35 +309,29 @@ App({
         dateTime: '2020-07-07 19:00:01',
         list: [
           {
-            name: '薯片',
-            price: 12,
+            name: '百事薯片',
+            price: 10,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACmSx.jpg'
           },
           {
-            name: '可乐',
-            price: 5,
+            name: '零度可乐',
+            price: 3,
             counts: 2,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACimF.jpg'
           },
           {
-            name: '纸巾',
-            price: 12,
+            name: '鸡腿饭',
+            price: '20',
             counts: 1,
-            pic: ''
+            pic: 'https://s1.ax1x.com/2020/07/07/UACFw4.jpg'
           },
           {
-            name: '套餐盒饭',
-            price: '32',
-            counts: 1,
-            pic: ''
-          },
-          {
-            name: '水果拼盘',
-            price: '12',
+            name: '洁柔纸巾',
+            price: '3',
             counts: 2,
-            pic: ''
-          },
+            pic: 'https://s1.ax1x.com/2020/07/07/UACQmD.jpg'
+          }
         ]
       },
     ]
