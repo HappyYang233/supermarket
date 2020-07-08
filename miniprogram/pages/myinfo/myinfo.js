@@ -17,7 +17,7 @@ Page({
       })
       return
     }
-
+  
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -116,5 +116,14 @@ Page({
       }
     })
   },
+  handleToOrder(e){
+    let {status} = e.currentTarget.dataset;
+    console.log("enter"+status);
+    const app = getApp();
+    app.globalData.orderListActive=status;
+    wx.switchTab({
+      url: '../orderlist/orderlist',
+    });
+  }
 
 })

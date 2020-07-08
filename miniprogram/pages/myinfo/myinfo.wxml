@@ -19,7 +19,7 @@
 					<van-col span="8">
 						<view class="help-items">
 							<van-icon class="help-items-icon" name="location" />
-							<view class="service-items-des">收货地址</view>
+							<view class="service-items-des" bindtap="">收货地址</view>
 						</view>
 					</van-col>
 					<van-col span="8">
@@ -31,7 +31,7 @@
 					<van-col span="8">
 						<view class="help-items">
 							<van-icon class="help-items-icon" name="setting" />
-							<view class="service-items-des">设置</view>
+							<view class="service-itms-des">设置</view>
 						</view>
 					</van-col>
 				</van-row>
@@ -45,21 +45,21 @@
 				</van-row>
 				<van-row>
 					<van-col span="6">
-						<view class="help-items">
+						<view class="help-items" bindtap="handleToOrder" data-status="1">
 							<van-icon class="help-items-icon" name="shop-collect" />
-							<view class="service-items-des">待发货</view>
+							<view class="service-items-des" >待发货</view>
 						</view>
 					</van-col>
 					<van-col span="6">
-						<view class="help-items">
+						<view class="help-items" bindtap="handleToOrder" data-status="2">
 							<van-icon class="help-items-icon" name="send-gift" />
-							<view class="service-items-des">配送中</view>
+							<view class="service-items-des" >配送中</view>
 						</view>
 					</van-col>
 					<van-col span="6">
-						<view class="help-items">
+						<view class="help-items" bindtap="handleToOrder" data-status="3">
 							<van-icon class="help-items-icon" name="checked" />
-							<view class="service-items-des">已完成</view>
+							<view class="service-items-des" >已完成</view>
 						</view>
 					</van-col>
 					<van-col span="6">

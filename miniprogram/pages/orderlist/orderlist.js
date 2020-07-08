@@ -64,11 +64,27 @@ Page({
       allOrderLists: rawOrderLists
     })
   },
+  getActive(){
+    const app  = getApp();
+    let active = app.globalData.orderListActive;
+    if(active==null)
+      return 0;
+    else
+      return active;
+  },
+  onShow: function () {
+    let active = this.getActive();
+    this.setData({
+      active:active
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
+
   onLoad: function (options) {
     this.getAllorderLists()
+   
   },
 
   /**
@@ -78,12 +94,6 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
 
   /**
    * 生命周期函数--监听页面隐藏
