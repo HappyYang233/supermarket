@@ -1,3 +1,8 @@
 <!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
-<button open-type="getUserInfo"  type="primary" bindgetuserinfo="handleGetUserInfo">微信授权登录</button>
+<view class="wrap">
+ 
+    <image class="" src="../../images/zhongxin.jpg" mode="scaleToFill" lazy-load="false" binderror="" bindload="" />
+    <button open-type="getUserInfo"  type="primary" bindgetuserinfo="handleGetUserInfo">微信授权登录</button>
+    
+      
+ </view>
