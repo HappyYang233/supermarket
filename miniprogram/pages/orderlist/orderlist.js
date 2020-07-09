@@ -1,5 +1,6 @@
 // pages/orderlist/orderlist.js
 import {checkLogin} from "../../util/comom"
+const app = getApp();
 Page({
 
   /**
@@ -75,6 +76,12 @@ Page({
       return active;
   },
   onShow: function () {
+    //判断Token
+    if(app.globalData.Token!=null){
+      this.setData({
+        thisPageISshow:true
+      })
+    }
     let active = this.getActive();
     active=Number(active);
     this.setData({
