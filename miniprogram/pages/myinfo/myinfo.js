@@ -14,6 +14,13 @@ Page({
     tempAddress:'',
     thisPageISshow: true
   },
+  onShow(){
+    if(app.globalData.Token!=null){
+      this.setData({
+        thisPageISshow:true
+      })
+    }
+  },
   onTabItemTap(item) {
     console.log(123)
     let self = this;
