@@ -80,7 +80,7 @@
 				<view class="cart-item-piece">单价{{item.goods_price}}</view>
 				<view class="cart-item-piece-button">
 					<van-icon data-downcounts="{{item.goods_id}}" bindtap="downCounts" class="change-counts-btn" name="arrow-left" />
-					{{item.counts}}
+					×{{item.counts}}
 					<van-icon data-upcounts="{{item.goods_id}}" bindtap="upCounts" class="change-counts-btn" name="arrow" />
 				</view>
 
