@@ -81,6 +81,12 @@
 					"pathName": "pages/goods/goods",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"scene": null
 				}
 			]
 		}
