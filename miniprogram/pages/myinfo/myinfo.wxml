@@ -4,10 +4,10 @@
 		<view class="userinfo-gai">
 			<van-row>
 				<van-col span="4">
-					<van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+					<van-image round width="5rem" height="5rem" src="{{ avatarUrl}}" />
 				</van-col>
 				<van-col span="16" offset="4">
-					<view class="userinfo-gai-name">王老五</view>
+					<view class="userinfo-gai-name">{{userName}}</view>
 				</van-col>
 			</van-row>
 		</view>
