@@ -1,2 +1,43 @@
-<!--pages/pay/pay.wxml-->
-<text>pages/pay/pay.wxml</text>
+<view class="pay-page">
+	<view class="address-info">
+		<view class="">
+			<checkbox disabled="true" value="{{item.goods_id}}" checked="true" />商家配送
+		</view>
+		<view class="divLine"></view>
+		<view class="address-info-real">
+			<van-cell-group>
+				<van-field value="{{ address }}" required clearable label="收货地址" icon="edit" placeholder="{{address}}" bind:click-icon="onClickIcon" readonly />
+
+				<van-field value="{{ phone }}" label="联系电话" placeholder="{{phone}}" required border="{{ false }}" readonly />
+			</van-cell-group>
+		</view>
+	</view>
+	<view class="order-detail">
+		<view class="">
+			订单详情
+		</view>
+		<view class="divLine"></view>
+		<view class="address-info-real">
+			<van-cell-group>
+				<van-field wx:for="{{cart}}" value="{{ item.counts }}" clearable label="{{item.goods_name}}" placeholder="{{item.counts}}" readonly />
+			</van-cell-group>
+      <van-cell-group>
+				<van-field value="{{ message }}" label="备注" type="textarea" placeholder="写下您的备注" autosize border="{{ false }}" />
+			</van-cell-group>
+		</view>
+		<view class="divLine"></view>
+		<view class="all-price">
+			共计： <span class="price-detail">¥{{allPrice}}</span>{{ }}</view>
+
+		<view class="remarks">
+			
+		</view>
+	</view>
+  <view class="confim-order">
+    <van-button type="primary" bindtap="handlePay" block>确认下单</van-button>
+  </view>
+  <van-dialog title="下单成功！" show="{{isShowDone}}" bind:close="onClose">
+    <view><van-icon name="passed" /></view>
+    <view>下单成功！</view>
+  </van-dialog>
+</view>

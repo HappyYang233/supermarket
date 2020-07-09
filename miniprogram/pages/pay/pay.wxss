@@ -1,1 +1,34 @@
 /* pages/pay/pay.wxss */
+.address-info {
+  width: 80%;
+  /* height: 600rpx; */
+  background-color: #fff;
+  margin: 40rpx auto;
+  padding: 20rpx 40rpx;
+  box-shadow: 1rpx 1rpx 10rpx darkgray;
+} 
+.order-detail {
+  width: 80%;
+  padding: 20rpx 40rpx;
+  margin: 40rpx auto;
+  /* height: 100rpx; */
+  background-color: #fff;
+  box-shadow: 1rpx 1rpx 10rpx darkgray;
+}
+.divLine{
+  background: #E0E3DA;
+  margin: 20rpx 0;
+  width: 100%;
+  height: 2rpx;
+ }
+ .all-price {
+   width: 100%;
+   text-align: right;
+ }
+ .price-detail {
+   color: red;
+ }
+ .confim-order {
+  width: 30%;
+  margin: 0rpx 40rpx 0rpx auto;
+ }

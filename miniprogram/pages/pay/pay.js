@@ -1,18 +1,61 @@
 // pages/pay/pay.js
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
+    address: '',
+    phone: '',
+    cart:[],
+    allPrice: 0,
+    isShowDone: false
+  },
+  getAddress() {
+    const address = getApp().globalData.address;
+    const phone = getApp().globalData.userPhone;
 
+    this.setData({
+      address,
+      phone
+    })
+  },
+  getStorageCart() {
+    let cart = wx.getStorageSync("shopCart") || [];
+    let allPrice = 0;
+    cart.forEach(ele => {
+      allPrice+=ele.sum
+      ele.counts = '×'+ele.counts
+    })
+    this.setData({
+      cart
+    })
+    
+    this.setData({
+      allPrice
+    })
+  },
+  handlePay(){
+    this.setData({
+      isShowDone: true
+    })
+  },
+  onClose(){
+    wx.setStorageSync('shopCart', []);
+    // wx.switchTab({
+    //   url: '../goods/goods',
+    // })
+    wx.reLaunch({
+      url: '../goods/goods'
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getAddress()
+    this.getStorageCart()
   },
 
   /**

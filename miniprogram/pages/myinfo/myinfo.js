@@ -6,6 +6,7 @@ Page({
   data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
+    userName:'',
     logged: false,
     takeSession: false,
     requestResult: '',
@@ -16,8 +17,13 @@ Page({
   },
   onShow(){
     if(app.globalData.Token!=null){
+      let userInfo= wx.getStorageSync('userInfo');
+      let imageUrl=userInfo.avatarUrl;
+      let userName=userInfo.nickName;
       this.setData({
-        thisPageISshow:true
+        thisPageISshow:true,
+        avatarUrl:imageUrl,
+        userName:userName
       })
     }
   },
@@ -66,7 +72,7 @@ Page({
     // }
     let address = app.globalData.address;
     this.setData({
-      address:address
+      address:address,
     })
     if (!wx.cloud) {
       wx.redirectTo({
