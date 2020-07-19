@@ -15,7 +15,7 @@ export const myrequest=(params)=>{
       title: "加载中",
       mask: true
     });
-    const baseUrl="http://121.36.50.195:8082/wx";
+    const baseUrl="http://121.36.50.195:8084/wx";
     // const baseUrl="http://localhost:8080/wx";
     return new Promise((resolve,reject)=>{
          wx.request({

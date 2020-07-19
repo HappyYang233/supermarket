@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    
   },
   async handleGetUserInfo(e){
     const {code}= await login();

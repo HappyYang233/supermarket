@@ -86,6 +86,13 @@ Page({
     })
   },
   getAllGoods() {
+    const db = wx.cloud.database()
+    console.log('==========================')
+    // db.collection("goods").doc("ZZp97xhHQD8WzOZa9BpF328Z0I911IjlVvIfijVq994ehbGT").get({
+    //   success: function(res) {
+    //     console.log(res)
+    //   }
+    // })
     const appData = getApp().globalData.goodsCate;
     this.setData({
       allGoodsLists: appData
