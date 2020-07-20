@@ -84,13 +84,8 @@
 				},
 				{
 					"id": -1,
-<<<<<<< HEAD
 					"name": "登录",
 					"pathName": "pages/login/login",
-=======
-					"name": "pages/pay/pay",
-					"pathName": "pages/pay/pay",
->>>>>>> 4812e5d0b7d7cf7c49b96242126a751607e36879
 					"scene": null
 				}
 			]
