@@ -1,6 +1,6 @@
 {
   "pages": [
-   
+    "pages/home/home",
     "pages/goods/goods",
      "pages/myinfo/myinfo",
     "pages/userConsole/userConsole",
@@ -48,7 +48,10 @@
     "van-dialog": "@vant/weapp/dialog/index",
     "van-popup": "@vant/weapp/popup/index",
     "van-checkbox": "@vant/weapp/checkbox/index",
-    "van-checkbox-group": "@vant/weapp/checkbox-group/index"
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-grid": "@vant/weapp/grid/index",
+  "van-grid-item": "@vant/weapp/grid-item/index"
 
   },
   "tabBar": {
@@ -59,22 +62,28 @@
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/goods/goods",
+        "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-o.png"
+        "iconPath": "images/home-o.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "商店",
+        "iconPath": "images/shop-o.png",
+        "selectedIconPath": "images/shop.png"
       },
       {
         "pagePath": "pages/orderlist/orderlist",
         "text": "订单",
-        "iconPath": "images/category.png",
-        "selectedIconPath": "images/category-o.png"
+        "iconPath": "images/order-o.png",
+        "selectedIconPath": "images/order.png"
       },
       {
         "pagePath": "pages/myinfo/myinfo",
         "text": "我的",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/my-o.png"
+        "iconPath": "images/user-o.png",
+        "selectedIconPath": "images/user.png"
       }
     ]
   }

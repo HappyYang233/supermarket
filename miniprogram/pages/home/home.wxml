@@ -1,0 +1,17 @@
+<view class="wrapper">
+	<swiper class='u-wrp-bnr' indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		<block wx:for="{{swiperPic}}" wx:key="*this">
+			<swiper-item>
+				<!-- <view class="swiper-item {{item.name}}"></view> -->
+				<image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+			</swiper-item>
+		</block>
+	</swiper>
+	<van-notice-bar left-icon="volume-o" text="{{noteText}}" />
+	<van-grid column-num="3">
+		<van-grid-item icon="{{item.icon}}" text="{{item.name}}" wx:for="{{gridContent}}" wx:key="index" />
+	</van-grid>
+	<view class="entry-img-con">
+		<image class="entry-img" src="https://s1.ax1x.com/2020/07/20/U4ojHS.jpg"></image>
+	</view>
+</view>

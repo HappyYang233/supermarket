@@ -40,6 +40,7 @@ Page({
     //   fail: () => {},
     //   complete: () => {}
     // });
+
   },
   onPageChange(event) {
     this.setData({
@@ -87,20 +88,18 @@ Page({
   },
   getAllGoods() {
     const db = wx.cloud.database()
-    console.log('==========================')
-    // db.collection("goods").doc("ZZp97xhHQD8WzOZa9BpF328Z0I911IjlVvIfijVq994ehbGT").get({
-    //   success: function(res) {
-    //     console.log(res)
-    //   }
-    // })
-    const appData = getApp().globalData.goodsCate;
-    this.setData({
-      allGoodsLists: appData
+    db.collection("goods").get({
+      // res.data[0].goodsCate
+      success: res => {
+        console.log(res.data[0].goodsCate)
+        this.readAllGoods(res.data[0].goodsCate)
+        this.setData({
+          allGoodsLists: res.data[0].goodsCate
+        })
+      }
     })
-    this.setData({
-      rightContent: appData[0].goodsList
-    })
-    // console.log(appData)
+  },
+  readAllGoods(appData) {
     appData.forEach(element => {
       switch (element.id) {
         case 1:
@@ -204,6 +203,7 @@ Page({
   onLoad: function (options) {
     this.getAllGoods()
     this.getShopCart()
+
   },
   // onTabItemTap(item) {
   //   let self = this
