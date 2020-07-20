@@ -1,15 +1,18 @@
 // pages/pay/pay.js
+const app = getApp()
 Page({
-  
+
   /**
    * 页面的初始数据
    */
   data: {
     address: '',
     phone: '',
-    cart:[],
+    cart: [],
     allPrice: 0,
-    isShowDone: false
+    isShowDone: false,
+    showEditAddress: false,
+    tempAddress: ''
   },
   getAddress() {
     const address = getApp().globalData.address;
@@ -20,27 +23,57 @@ Page({
       phone
     })
   },
+  handleEditAddress(e) {
+    console.log(2);
+    let address = this.data.tempAddress;
+
+    console.log(address);
+    app.globalData.address = address;
+    this.setData({
+      address: address,
+      tempAddress: ''
+    });
+    wx.nextTick(() => {
+      this.getAddress()
+    })
+
+    this.setData({
+      showEditAddress: false
+    })
+  },
+  cancelEditAdd() {
+    this.setData({
+      showEditAddress: false
+    })
+  },
+  bindName(e){
+    console.log(11111);
+    let tempAddress= e.detail.value;
+    this.setData({
+      tempAddress:tempAddress
+    })
+  },
   getStorageCart() {
     let cart = wx.getStorageSync("shopCart") || [];
     let allPrice = 0;
     cart.forEach(ele => {
-      allPrice+=ele.sum
-      ele.counts = '×'+ele.counts
+      allPrice += ele.sum
+      ele.counts = '×' + ele.counts
     })
     this.setData({
       cart
     })
-    
+
     this.setData({
       allPrice
     })
   },
-  handlePay(){
+  handlePay() {
     this.setData({
       isShowDone: true
     })
   },
-  onClose(){
+  onClose() {
     wx.setStorageSync('shopCart', []);
     // wx.switchTab({
     //   url: '../goods/goods',
@@ -49,7 +82,11 @@ Page({
       url: '../goods/goods'
     })
   },
-
+  onClickIcon() {
+    this.setData({
+      showEditAddress: true
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

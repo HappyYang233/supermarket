@@ -112,12 +112,15 @@
   align-items: center;
 }
 .cart-list-container {
+  height: 246px;
+  overflow: scroll;
+}
+.cart-dialog{
   position: relative;
 }
-
 .cart-list-bottom {
   position: absolute;
-  bottom: -400rpx;
+  bottom: 60rpx;
   width: 100%;
   display: flex;
   flex-direction: row;

@@ -21,7 +21,7 @@
 			<van-cell-group>
 				<van-field wx:for="{{cart}}" value="{{ item.counts }}" clearable label="{{item.goods_name}}" placeholder="{{item.counts}}" readonly />
 			</van-cell-group>
-      <van-cell-group>
+			<van-cell-group>
 				<van-field value="{{ message }}" label="备注" type="textarea" placeholder="写下您的备注" autosize border="{{ false }}" />
 			</van-cell-group>
 		</view>
@@ -30,14 +30,29 @@
 			共计： <span class="price-detail">¥{{allPrice}}</span>{{ }}</view>
 
 		<view class="remarks">
-			
+
 		</view>
 	</view>
-  <view class="confim-order">
-    <van-button type="primary" bindtap="handlePay" block>确认下单</van-button>
-  </view>
-  <van-dialog title="下单成功！" show="{{isShowDone}}" bind:close="onClose">
-    <view><van-icon name="passed" /></view>
-    <view>下单成功！</view>
-  </van-dialog>
+	<view class="confim-order">
+		<van-button type="primary" bindtap="handlePay" block>确认下单</van-button>
+	</view>
+	<van-dialog title="下单成功！" show="{{isShowDone}}" bind:close="onClose">
+		<view>
+			<van-icon name="passed" />
+		</view>
+		<view>下单成功！</view>
+	</van-dialog>
+
+	<van-dialog use-slot title="地址/修改地址" show="{{ showEditAddress }}" confirm-button-open-type="getUserInfo" 
+	bind:confirm="handleEditAddress" bind:getuserinfo="getUserInfo"
+	bind:cancel="cancelEditAdd"
+	show-cancel-button>
+		<view class="dialog-content">
+			<input class="dialog-input" type="text" disabled value="{{address}}" />
+			<input class="dialog-input" value="{{tempAddress}}" center placeholder="请输入新地址" bindinput="bindName" />
+		</view>
+		<!-- <input type="text" disabled value="{{address}}" />
+		<input value="{{tempAddress}}" center placeholder="请输入新地址" bindinput="bindName" /> -->
+		<!-- <van-button size="small" type="primary" bindtap="handleEditAddress">确认修改</van-button> -->
+	</van-dialog>
 </view>
