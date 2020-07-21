@@ -1,0 +1,100 @@
+<view class="wrapper">
+	<view class="top">
+		<view class="title">
+			<span class="color-text">天投超市 </span>
+			天府D区
+		</view>
+		<view class="search-box">
+			<van-cell-group>
+				<van-field value="{{ sms }}" center clearable placeholder="请输入商品名称" border="{{ false }}" use-button-slot>
+					<van-button slot="button" size="small" type="primary">搜索</van-button>
+				</van-field>
+			</van-cell-group>
+		</view>
+	</view>
+
+	<view class="good_container">
+		<view class="good-content-left">
+			<van-sidebar active-key="{{ activeKey }}" bind:change="onPageChange">
+				<van-sidebar-item title="{{item.name}}" wx:for="{{leftMenuList}}" wx:key="index" />
+			</van-sidebar>
+		</view>
+		<scroll-view class="good-content-right" scroll-y="true">
+			<view class="goods-item" wx:if="{{currentPage == 0}}" wx:for="{{snack}}" wx:key="index" >
+				<van-card tag="热销" price="{{item.goods_price}}" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
+					<view class="good-extra" slot="footer">
+						<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
+						<van-button size="mini" bindtap="onAddGood" data-pickedgood="{{item}}">+</van-button>
+					</view>
+				</van-card>
+			</view>
+			<view class="goods-item" wx:if="{{currentPage == 1}}" wx:for="{{convience}}" wx:key="index" >
+				<van-card tag="热销" price="{{item.goods_price}}" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
+					<view class="good-extra" slot="footer">
+						<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
+						<van-button bindtap="onAddGood" data-pickedgood="{{item}}" size="mini">+</van-button>
+					</view>
+				</van-card>
+			</view>
+			<view class="goods-item" wx:if="{{currentPage == 2}}" wx:for="{{drink}}" wx:key="index" >
+				<van-card tag="热销" price="{{item.goods_price}}" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
+					<view class="good-extra" slot="footer">
+						<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
+						<van-button bindtap="onAddGood" data-pickedgood="{{item}}" size="mini">+</van-button>
+					</view>
+				</van-card>
+			</view>
+			<view class="goods-item" wx:if="{{currentPage == 3}}" wx:for="{{necessity}}" wx:key="index" >
+				<van-card tag="热销" price="{{item.goods_price}}" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
+					<view class="good-extra" slot="footer">
+						<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
+						<van-button bindtap="onAddGood" data-pickedgood="{{item}}" size="mini">+</van-button>
+					</view>
+				</van-card>
+			</view>
+		</scroll-view>
+	</view>
+
+	<view class="footer_tool">
+		<view class="shopping-cart">
+			<van-icon bindtap="onCartClick" name="shopping-cart-o" info="{{shopCartLists.length || 0}}" />
+		</view>
+		<view class="total_price_wrap">
+			<view class="total_price">
+				合计: <text class="total_price_text">{{shopCartLists.sumPrice}} 元</text>
+			</view>
+		</view>
+		<view class="order_pay_wrap" bindtap="handlePay">
+			<van-button round type="danger" size="small">结 算</van-button>
+		</view>
+	</view>
+
+
+
+	<van-popup position="bottom" custom-style="height: 50%;" show="{{ CartListShow }}" bind:close="onCartListClose" class="cart-dialog">
+		<view class="cart-list-container">
+			<view class="cart-list-single" wx:for="{{ shopCartLists.goods }}" wx:key="index">
+				<view class="cart-item-piece cart-item-name">
+					<checkbox value="{{item.goods_id}}" checked="true" />{{item.goods_name}}
+				</view>
+				<view class="cart-item-piece">单价{{item.goods_price}}</view>
+				<view class="cart-item-piece-button">
+					<van-icon data-downcounts="{{item.goods_id}}" bindtap="downCounts" class="change-counts-btn" name="arrow-left" />
+					×{{item.counts}}
+					<van-icon data-upcounts="{{item.goods_id}}" bindtap="upCounts" class="change-counts-btn" name="arrow" />
+				</view>
+			</view>
+
+		</view>
+		<view class="cart-list-bottom">
+			<view class="list-total-price">
+				合计: <text class="total_price_text">{{shopCartLists.sumPrice}} 元</text>
+			</view>
+
+			<view class="list-buy" bindtap="handlePay">
+				<van-button round type="danger" size="small">结 算</van-button>
+			</view>
+		</view>
+	</van-popup>
+
+</view>

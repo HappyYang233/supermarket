@@ -60,6 +60,12 @@ Page({
         ]
       })
   },
+  jumpToShop() {
+    console.log(123)
+    wx.switchTab({
+      url: '../goods/goods'
+    })
+  },
   onLoad: function (options) {
     this.getSwiperPic()
   },

@@ -2,7 +2,7 @@
   "pages": [
     "pages/home/home",
     "pages/goods/goods",
-     "pages/myinfo/myinfo",
+    "pages/myinfo/myinfo",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -51,8 +51,8 @@
     "van-checkbox-group": "@vant/weapp/checkbox-group/index",
     "van-notice-bar": "@vant/weapp/notice-bar/index",
     "van-grid": "@vant/weapp/grid/index",
-  "van-grid-item": "@vant/weapp/grid-item/index"
-
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-search": "@vant/weapp/search/index"
   },
   "tabBar": {
     "color": "#999",
@@ -60,8 +60,7 @@
     "backgroundColor": "",
     "position": "bottom",
     "borderStyle": "black",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/home/home",
         "text": "首页",
         "iconPath": "images/home-o.png",
