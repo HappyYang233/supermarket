@@ -29,7 +29,7 @@
 					<van-card bindtap="tapForGoods"  data-item="{{item}}" wx:for="{{item.goodsList}}" tag="热销" price="{{item.goods_price}}" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
 						<view class="good-extra" slot="footer">
 							<!-- <view class="good-extra-stock">库存：{{item.goods_inventory}}</view> -->
-							<!-- <van-button size="mini" bindtap="onAddGood" data-pickedgood="{{item}}">+</van-button> -->
+							<van-button size="mini" catchtap="onAddGood" data-pickedgood="{{item}}">+</van-button>
 						</view>
 					</van-card>
 				</view>
@@ -81,15 +81,20 @@
 	</van-popup>
 	<van-dialog use-slot title="商品详情" show="{{ goodDetailShow }}" show-cancel-button cancelButtonText="关闭" show-confirm-button="{{false}}" >
 		<image src="{{pickedGoodDeatil.pic}}" />
-		<view>
+		<view class="detail-content">
 		 <view>
-		 	{{pickedGoodDeatil.goods_name}}
+		 	商品名：{{pickedGoodDeatil.goods_name}}
 		</view>
 		<view>
-			{{pickedGoodDeatil.goods_price}}
+			价格：{{pickedGoodDeatil.goods_price}}
 		</view>
 		<view>
-			{{pickedGoodDeatil.goods_des}}
+			描述：{{pickedGoodDeatil.goods_des}}
+		</view>
+		<view class="dialog-good-btn">
+			<!-- <van-button round type="danger" size="small" bindtap="onAddGood" data-pickedgood="{{pickedGoodDeatil}}">+</van-button>
+			{{current}}
+				<van-button round type="danger" size="small" bindtap="onAddGood" data-pickedgood="{{pickedGoodDeatil}}">-</van-button> -->
 		</view>
 		</view>
 	</van-dialog>

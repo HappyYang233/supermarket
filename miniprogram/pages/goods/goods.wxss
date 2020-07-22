@@ -161,3 +161,11 @@
 .change-counts-btn {
   cursor: pointer;
 }
+
+.detail-content{
+  width: 90%;
+  margin: 20rpx auto;
+}
+.dialog-good-btn {
+  margin: 20rpx auto;
+}

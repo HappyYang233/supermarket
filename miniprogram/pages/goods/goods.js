@@ -126,7 +126,34 @@ Page({
       active_index: event.detail
     })
   },
+  // 列表中添加商品
   onAddGood(e) {
+    
+    let pickedGood = e.currentTarget.dataset.pickedgood
+    pickedGood.counts = 1
+    pickedGood.sum = pickedGood.goods_price
+    let pickedgoodid = pickedGood.goods_id
+    let cart = wx.getStorageSync("shopCart") || [];
+    let hasGood = false
+    let goodindex = -1
+    cart.forEach((item, index) => {
+      if (pickedgoodid == item.goods_id) {
+        hasGood = true
+        goodindex = index
+      }
+    })
+    if (hasGood) {
+      cart[goodindex].counts += 1
+      cart[goodindex].sum += pickedGood.goods_price
+    } else {
+      cart.push(pickedGood)
+    }
+    wx.setStorageSync('shopCart', cart);
+    this.getShopCart()
+  },
+  // 弹窗添加商品
+  DialogAddGood(e) {
+    
     let pickedGood = e.currentTarget.dataset.pickedgood
     pickedGood.counts = 1
     pickedGood.sum = pickedGood.goods_price
