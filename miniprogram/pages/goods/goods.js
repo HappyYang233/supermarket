@@ -117,9 +117,7 @@ Page({
 
 
   },
-
   onPageChange(event) {
-
     this.setData({
       selectIndex: event.detail,
       active_index: event.detail
@@ -362,9 +360,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
-
-
+      const app = getApp();
+      let cateActiveId= app.globalData.cateActiveId;
+      if(cateActiveId!=null)
+      {
+        this.setData({
+          //id从1开始的所以要-1
+          selectIndex: cateActiveId-1,
+          active_index: cateActiveId-1
+        });
+        app.globalData.cateActiveId=null;
+      }
   },
 
   /**

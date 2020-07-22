@@ -15,28 +15,34 @@ Page({
     noteText: '【温馨提醒】各位顾客，天投物业A区小超市决定每周五为中信延长营业时间至19：00，让大家有更充裕的时间去选购商品，欢迎大家踊跃提供意见。',
     gridContent: [
       {
+        id:1,
         name: "零食百味",
-        icon: 'coupon-o',
+        icon: '.t-icon iconfont-shipinyinliao',
       },
       {
+        id:2,
         name: '方便速食',
-        icon: 'gift-card-o',
+        icon: '.t-icon iconfont-mingcha',
       },
       {
+        id:3,
         name: '饮料果汁',
-        icon: 'bulb-o',
+        icon: '.t-icon iconfont-liangyou',
       },
       {
+        id:4,
         name: '家居日用',
-        icon: 'hotel-o',
+        icon: '.t-icon iconfont-jiafang',
       },
       {
+        id:51,
         name: '历史订单',
-        icon: 'notes-o',
+        icon: '.t-icon iconfont-dingdan ',
       },
       {
+        id:52,
         name: '我的信息',
-        icon: 'user-circle-o',
+        icon: '.t-icon iconfont-wode1 ',
       },
     ]
   },
@@ -65,6 +71,31 @@ Page({
     wx.switchTab({
       url: '../goods/goods'
     })
+  },
+  handleClickCate(e){
+    const id = e.currentTarget.dataset.id;
+    if(id===51)
+    {
+      wx.switchTab({
+        url: '../orderlist/orderlist',
+      })
+      //跳转历史订单页面
+    }
+    else if(id===52)
+    {
+      wx.switchTab({
+        url: '../myinfo/myinfo',
+      })
+    }
+    else{
+      const app = getApp();
+      app.globalData.cateActiveId=id;
+      wx.switchTab({
+        url: '../goods/goods',
+      })
+    }
+
+    console.log(e);
   },
   onLoad: function (options) {
     this.getSwiperPic()
