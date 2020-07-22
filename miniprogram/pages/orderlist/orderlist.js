@@ -1,5 +1,48 @@
 // pages/orderlist/orderlist.js
-import {checkLogin} from "../../util/comom"
+// const rawOrderLists = [
+//   {
+//     fristPic: '../../images/orderlist/taocan.jpg',
+//     dateTime: '2020-07-07 14:00:01',
+//     price:'22.0',
+//     status:0,
+//   },
+//   {
+//     fristPic: '../../images/orderlist/taocan.jpg',
+//     dateTime: '2020-07-07 15:00:01',
+//     price:'665.1',
+//     status:1,
+//   },  {
+//     fristPic: '../../images/orderlist/taocan.jpg',
+//     dateTime: '2020-07-07 16:00:01',
+//     price:'85.7',
+//     status:1,
+//   },  {
+//     fristPic: '../../images/orderlist/taocan.jpg',
+//     dateTime: '2020-07-07 17:02:01',
+//     price:'10.0',
+//     status:2,
+//   },  {
+//     fristPic: '../../images/orderlist/taocan.jpg',
+//     dateTime: '2020-07-07 18:00:01',
+//     price:'23.0',
+//     status:2,
+//   },  {
+//     fristPic: '../../images/orderlist/taocan.jpg',
+//     dateTime: '2020-07-07 19:00:01',
+//     price:'78.6',
+//     status:0,
+//   },  {
+//     fristPic: '../../images/orderlist/taocan.jpg',
+//     dateTime: '2020-07-07 19:30:22',
+//     price:'123.0',
+//     status:1,
+//   },
+// ]
+
+const db = wx.cloud.database()
+import {
+  checkLogin
+} from "../../util/comom"
 const app = getApp();
 Page({
 
@@ -8,9 +51,9 @@ Page({
    */
   data: {
     activePage: 0,
-    allOrderLists:[],
-    status: ['待发货', '配送中','已完成'],
-    tagTypeX: ['primary','warning','success'],
+    allOrderLists: [],
+    status: ['','待发货', '配送中', '已完成','已取消'],
+    tagTypeX: ['','primary', 'warning', 'success','danger'],
     thisPageISshow: true
   },
 
@@ -24,72 +67,42 @@ Page({
 
   // 获取所有的订单
   getAllorderLists() {
-    const rawOrderLists = [
-      {
-        fristPic: '../../images/orderlist/taocan.jpg',
-        dateTime: '2020-07-07 14:00:01',
-        price:'22.0',
-        status:0,
-      },
-      {
-        fristPic: '../../images/orderlist/taocan.jpg',
-        dateTime: '2020-07-07 15:00:01',
-        price:'665.1',
-        status:1,
-      },  {
-        fristPic: '../../images/orderlist/taocan.jpg',
-        dateTime: '2020-07-07 16:00:01',
-        price:'85.7',
-        status:1,
-      },  {
-        fristPic: '../../images/orderlist/taocan.jpg',
-        dateTime: '2020-07-07 17:02:01',
-        price:'10.0',
-        status:2,
-      },  {
-        fristPic: '../../images/orderlist/taocan.jpg',
-        dateTime: '2020-07-07 18:00:01',
-        price:'23.0',
-        status:2,
-      },  {
-        fristPic: '../../images/orderlist/taocan.jpg',
-        dateTime: '2020-07-07 19:00:01',
-        price:'78.6',
-        status:0,
-      },  {
-        fristPic: '../../images/orderlist/taocan.jpg',
-        dateTime: '2020-07-07 19:30:22',
-        price:'123.0',
-        status:1,
-      },
-    ]
-    this.setData({
-      allOrderLists: rawOrderLists
+    db.collection('history').get({
+      // res.data[0].goodsCate
+      success: res => {
+        // console.log(res)
+        this.setData({
+          allOrderLists: res.data
+        })
+      }
     })
+    // this.setData({
+    //   allOrderLists: rawOrderLists
+    // })
   },
-  getActive(){
-    const app  = getApp();
+  getActive() {
+    const app = getApp();
     let active = app.globalData.orderListActive;
-    if(active==null)
+    if (active == null)
       return 0;
     else
       return active;
   },
   onShow: function () {
     //判断Token
-    if(app.globalData.Token!=null){
+    if (app.globalData.Token != null) {
       this.setData({
-        thisPageISshow:true
+        thisPageISshow: true
       })
     }
     let active = this.getActive();
-    active=Number(active);
+    active = Number(active);
     this.setData({
-      activePage:active
+      activePage: active
     })
     const pages = getCurrentPages()
-              const perpage = pages[pages.length - 1]
-              perpage.onLoad()  
+    const perpage = pages[pages.length - 1]
+    perpage.onLoad()
     // this.setData({
     //   activePage:active
     // })
@@ -104,17 +117,17 @@ Page({
     //  wx.navigateTo({
     //     url: '../login/login',
     //     success: (result) => {
-          
+
     //     },
     //     fail: () => {},
     //     complete: () => {}
     //   });
-        
+
     // }
     // else{
-      this.getAllorderLists()
+    this.getAllorderLists()
     // }
-   
+
   },
   onTabItemTap(item) {
     let self = this
