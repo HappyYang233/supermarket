@@ -19,22 +19,30 @@
 		<view class="divLine"></view>
 		<view class="address-info-real">
 			<van-cell-group>
-				<van-field wx:for="{{cart}}" value="{{ item.counts }}" clearable label="{{item.goods_name}}" placeholder="{{item.counts}}" readonly />
+				<van-field wx:for="{{cart}}"
+				wx:key="index" value="{{ '×' + item.counts }}" clearable label="{{item.goods_name}}" placeholder="{{item.counts}}" readonly />
 			</van-cell-group>
 			<van-cell-group>
-				<van-field value="{{ message }}" label="备注" type="textarea" placeholder="写下您的备注" autosize border="{{ false }}" />
+			<view class="remarks-container">
+				<view class="remarks-title" style="max-width:90px;min-width:90px">备注</view>
+				<input bindinput="inputRemarks" class="remarks-input"></input>
+			</view>
+				<!-- <van-field bind:input="inputRemarks"
+				label="备注"
+				type="textarea"
+				placeholder="写下您的备注"
+				autosize
+				border="{{ false }}" /> -->
 			</van-cell-group>
 		</view>
 		<view class="divLine"></view>
 		<view class="all-price">
 			共计： <span class="price-detail">¥{{allPrice}}</span>{{ }}</view>
-
 		<view class="remarks">
-
 		</view>
 	</view>
 	<view class="confim-order">
-		<van-button type="primary" bindtap="handlePay" block>确认下单</van-button>
+		<van-button color="#ff0000" bindtap="handlePay" block>确认下单</van-button>
 	</view>
 	<van-dialog title="下单成功！" show="{{isShowDone}}" bind:close="onClose">
 		<view>

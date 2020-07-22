@@ -1,5 +1,7 @@
 // pages/pay/pay.js
 const app = getApp()
+const db = wx.cloud.database()
+const util = require('../../util/util')
 Page({
 
   /**
@@ -12,7 +14,13 @@ Page({
     allPrice: 0,
     isShowDone: false,
     showEditAddress: false,
-    tempAddress: ''
+    tempAddress: '',
+    remarks: '',
+  },
+  inputRemarks(e) {
+    this.setData({
+      remarks: e.detail.value
+    })
   },
   getAddress() {
     const address = getApp().globalData.address;
@@ -46,11 +54,11 @@ Page({
       showEditAddress: false
     })
   },
-  bindName(e){
+  bindName(e) {
     console.log(11111);
-    let tempAddress= e.detail.value;
+    let tempAddress = e.detail.value;
     this.setData({
-      tempAddress:tempAddress
+      tempAddress: tempAddress
     })
   },
   getStorageCart() {
@@ -58,7 +66,6 @@ Page({
     let allPrice = 0;
     cart.forEach(ele => {
       allPrice += ele.sum
-      ele.counts = '×' + ele.counts
     })
     this.setData({
       cart
@@ -69,9 +76,31 @@ Page({
     })
   },
   handlePay() {
-    this.setData({
-      isShowDone: true
-    })
+    this.changeOrderHistory()
+  },
+  changeOrderHistory() {
+    // const allP = this.data.allPrice
+    // const now = util.formatTime(new Date)
+    // const cart = this.data.cart
+    const _this = this
+    const result = {
+      allPrice: JSON.parse(JSON.stringify(this.data.allPrice)),
+      bookTime: util.formatTime(new Date),
+      cartItems: JSON.parse(JSON.stringify(this.data.cart)),
+      remark: JSON.parse(JSON.stringify(this.data.remarks)),
+      statusCode: 3
+    }
+
+  
+    db.collection('history').add({
+      data: result,
+      success: res => {
+        _this.setData({
+          isShowDone: true
+        })
+      }
+    }, )
+
   },
   onClose() {
     wx.setStorageSync('shopCart', []);

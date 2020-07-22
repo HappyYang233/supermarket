@@ -6,7 +6,8 @@
   margin: 40rpx auto;
   padding: 20rpx 40rpx;
   box-shadow: 1rpx 1rpx 10rpx darkgray;
-} 
+}
+
 .order-detail {
   width: 80%;
   padding: 20rpx 40rpx;
@@ -15,28 +16,69 @@
   background-color: #fff;
   box-shadow: 1rpx 1rpx 10rpx darkgray;
 }
-.divLine{
+
+.divLine {
   background: #E0E3DA;
   margin: 20rpx 0;
   width: 100%;
   height: 2rpx;
- }
- .all-price {
-   width: 100%;
-   text-align: right;
- }
- .price-detail {
-   color: red;
- }
- .confim-order {
+}
+
+.all-price {
+  width: 100%;
+  text-align: right;
+}
+
+.price-detail {
+  color: red;
+}
+
+.confim-order {
   width: 30%;
   margin: 0rpx 40rpx 0rpx auto;
- }
+}
 
- .dialog-content {
-   height: 100rpx;
-   margin: 20rpx 40rpx;
- }
- .dialog-input {
+.dialog-content {
+  height: 100rpx;
+  margin: 20rpx 40rpx;
+}
+
+.dialog-input {
   height: 50rpx;
- }
+}
+
+.remarks-container {
+  position: relative;
+  display: flex;
+  width: calc( 100% - 90px);
+  padding: 10px 16px;
+  padding: var(--cell-vertical-padding, 10px) var(--cell-horizontal-padding, 16px);
+  font-size: 14px;
+  font-size: var(--cell-font-size, 14px);
+  line-height: 24px;
+  line-height: var(--cell-line-height, 24px);
+  color: #323233;
+  color: var(--cell-text-color, #323233);
+  background-color: #fff;
+  background-color: var(--cell-background-color, #fff);
+  margin: 0;
+}
+
+.remarks-title {
+  display: block;
+  max-width: 90px;
+  min-width: 90px;
+
+}
+
+.remarks-input {
+  overflow: hidden;
+  /* text-align: right; */
+  vertical-align: middle;
+  color: #969799;
+  color: var(--cell-value-color, #969799);
+  display: block;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}

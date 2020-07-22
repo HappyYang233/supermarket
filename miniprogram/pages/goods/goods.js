@@ -11,7 +11,6 @@ Page({
     searchStr: '',
     goodDetailShow: false,
     buyResult: [],
-    selectIndex: 0,
     shopCartLists: {},
     CartListShow: false,
     selectIndex: 0,
