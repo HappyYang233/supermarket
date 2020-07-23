@@ -1,11 +1,11 @@
 /* pages/orderlist/orderlist.wxss */
 .order-pannel-con {
-  width: 100%;
+  /* width: 100%; */
   height: 200rpx;
   background-color: #fff;
   margin: 40rpx 0 40rpx 0;
   box-shadow: gary 0px 1px 10px;
-  padding: 30rpx 20rpx 10rpx 20rpx;
+  padding: 30rpx 30rpx 10rpx 30rpx;
 }
 
 .order-img-container {
@@ -16,6 +16,54 @@
   font-size: 0.5em;
   color: darkgrey;
 }
+.order-statu-spec {
+  text-align:center;
+}
 .order-context {
+  margin-top: 20rpx;
   font-size: 0.5em;
+  height: 60px;
+  line-height: 60px;
+  
+}
+
+.edit-container{
+  position: relative;
+  height: 80rpx;
+  width: 100%;
+  margin: 0 auto;
+}
+.edit-more{
+  width: 80rpx;
+  margin: 0 auto;
+}
+.edit-del {
+  position: absolute;
+  right: 20rpx;
+  top: -5rpx;
+}
+
+.detail-container {
+  width: 90%;
+  padding: 0rpx 20rpx 40rpx 20rpx;
+  position: relative;
+}
+
+
+.detail-content {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.8em;
+}
+
+.detail-item1 {
+  width: 120rpx;
+}
+.detail-counts-con {
+  position: absolute;
+  bottom: -10rpx;
+  right: 40rpx;
+}
+.detail-costs {
+  color: #ff0000;
 }
