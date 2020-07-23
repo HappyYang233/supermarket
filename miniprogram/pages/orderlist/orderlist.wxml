@@ -2,132 +2,223 @@
 <view class="order-list-container" wx:if="{{thisPageISshow}}">
 	<van-tabs active="{{ activePage }}" bind:change="tabOnChange">
 		<van-tab title="全部">
-			<view class="order-pannel-con" wx:for="{{allOrderLists}}">
-				<van-row gutter="10">
-					<van-col span="8">
-						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
-					</van-col>
-					<van-col span="8">
-						<view class="order-intro">时间</view>
-						<view class="order-context">{{item.bookTime}}</view>
-					</van-col>
-					<van-col span="3">
-						<view class="order-intro">总价</view>
-						<view class="order-context">{{item.allPrice}}</view>
-					</van-col>
-					<van-col span="5">
-						<view class="order-intro">状态</view>
-						<view class="order-context">
+			<view wx:for="{{allOrderLists}}" wx:key="index">
+				<view class="order-pannel-con">
+					<van-row gutter="10">
+						<van-col span="8">
+							<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+						</van-col>
+						<van-col span="8">
+							<view class="order-intro">时间</view>
+							<view class="order-context">{{item.bookTime}}</view>
+						</van-col>
+						<van-col span="3">
+							<view class="order-intro">总价</view>
+							<view class="order-context">{{item.allPrice}}</view>
+						</van-col>
+						<van-col span="5">
+							<view class="order-intro order-statu-spec">状态</view>
+							<view class="order-context order-statu-spec">
+								<van-circle value="{{ 100*item.statusCode/3 > 100 ? 0: 100*item.statusCode/3 }}" size="50" layer-color="lightGray" text="{{status[item.statusCode]}}" color="{{gradientColor[item.statusCode-1]}}" />
 
-							<van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag>
+							</view>
+						</van-col>
+					</van-row>
+					<view class="edit-container">
+						<view class="edit-more" bindtap="showSpecDetails" data-index="{{index}}">{{item.showDetail ? '>' : 'v'}}</view>
+						<view class="edit-del" wx:if="{{item.statusCode == 1}}">
+							<van-button size="mini" type="warning">取消订单</van-button>
 						</view>
-
-					</van-col>
-				</van-row>
-				<!-- {{status[item.status]}} -->
-
+					</view>
+					<!-- {{status[item.status]}} -->
+				</view>
+				<view class="detail-container" hidden="{{item.showDetail}}">
+					<view class="detail-content" wx:for="{{item.cartItems}}" wx:key="idx">
+						<view class="detail-item1">{{item.goods_name}}</view>
+						<view>{{item.goods_price}}</view>
+						<view>×{{item.counts}}</view>
+						<!-- <view>{{item.sum}}</view> -->
+					</view>
+					<view class="detail-counts-con">总计： <span class="detail-costs">{{item.allPrice}}</span></view>
+				</view>
 			</view>
+
 		</van-tab>
+
 		<van-tab title="待发货">
-			<view class="order-pannel-con" wx:if="{{item.statusCode == 1}}" wx:for="{{allOrderLists}}">
-				<van-row gutter="10">
-					<van-col span="8">
-						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
-					</van-col>
-					<van-col span="8">
-						<view class="order-intro">时间</view>
-						<view class="order-context">{{item.bookTime}}</view>
-					</van-col>
-					<van-col span="3">
-						<view class="order-intro">总价</view>
-						<view class="order-context">{{item.allPrice}}</view>
-					</van-col>
-					<van-col span="5">
-						<view class="order-intro">状态</view>
-						<view class="order-context">
+			<view wx:for="{{allOrderLists}}" wx:key="index" wx:if="{{item.statusCode == 1}}">
+				<view class="order-pannel-con">
+					<van-row gutter="10">
+						<van-col span="8">
+							<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+						</van-col>
+						<van-col span="8">
+							<view class="order-intro">时间</view>
+							<view class="order-context">{{item.bookTime}}</view>
+						</van-col>
+						<van-col span="3">
+							<view class="order-intro">总价</view>
+							<view class="order-context">{{item.allPrice}}</view>
+						</van-col>
+						<van-col span="5">
+							<view class="order-intro order-statu-spec">状态</view>
+							<view class="order-context order-statu-spec">
+								<van-circle value="{{ 100*item.statusCode/3 > 100 ? 0: 100*item.statusCode/3 }}" size="50" layer-color="lightGray" text="{{status[item.statusCode]}}" color="{{gradientColor[item.statusCode-1]}}" />
 
-							<van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag>
+							</view>
+						</van-col>
+					</van-row>
+					<view class="edit-container">
+						<view class="edit-more" bindtap="showSpecDetails" data-index="{{index}}">{{item.showDetail ? '>' : 'v'}}</view>
+						<view class="edit-del" wx:if="{{item.statusCode == 1}}">
+							<van-button size="mini" type="warning">取消订单</van-button>
 						</view>
-
-					</van-col>
-				</van-row>
+					</view>
+					<!-- {{status[item.status]}} -->
+				</view>
+				<view class="detail-container" hidden="{{item.showDetail}}">
+					<view class="detail-content" wx:for="{{item.cartItems}}" wx:key="idx">
+						<view class="detail-item1">{{item.goods_name}}</view>
+						<view>{{item.goods_price}}</view>
+						<view>×{{item.counts}}</view>
+						<!-- <view>{{item.sum}}</view> -->
+					</view>
+					<view class="detail-counts-con">总计： <span class="detail-costs">{{item.allPrice}}</span></view>
+				</view>
 			</view>
+
 		</van-tab>
+
 		<van-tab title="配送中">
-			<view class="order-pannel-con" wx:if="{{item.statusCode == 2}}" wx:for="{{allOrderLists}}">
-				<van-row gutter="10">
-					<van-col span="8">
-						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
-					</van-col>
-					<van-col span="8">
-						<view class="order-intro">时间</view>
-						<view class="order-context">{{item.bookTime}}</view>
-					</van-col>
-					<van-col span="3">
-						<view class="order-intro">总价</view>
-						<view class="order-context">{{item.allPrice}}</view>
-					</van-col>
-					<van-col span="5">
-						<view class="order-intro">状态</view>
-						<view class="order-context">
+			<view wx:for="{{allOrderLists}}" wx:key="index" wx:if="{{item.statusCode == 2}}">
+				<view class="order-pannel-con">
+					<van-row gutter="10">
+						<van-col span="8">
+							<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+						</van-col>
+						<van-col span="8">
+							<view class="order-intro">时间</view>
+							<view class="order-context">{{item.bookTime}}</view>
+						</van-col>
+						<van-col span="3">
+							<view class="order-intro">总价</view>
+							<view class="order-context">{{item.allPrice}}</view>
+						</van-col>
+						<van-col span="5">
+							<view class="order-intro order-statu-spec">状态</view>
+							<view class="order-context order-statu-spec">
+								<van-circle value="{{ 100*item.statusCode/3 > 100 ? 0: 100*item.statusCode/3 }}" size="50" layer-color="lightGray" text="{{status[item.statusCode]}}" color="{{gradientColor[item.statusCode-1]}}" />
 
-							<van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag>
+							</view>
+						</van-col>
+					</van-row>
+					<view class="edit-container">
+						<view class="edit-more" bindtap="showSpecDetails" data-index="{{index}}">{{item.showDetail ? '>' : 'v'}}</view>
+						<view class="edit-del" wx:if="{{item.statusCode == 1}}">
+							<van-button size="mini" type="warning">取消订单</van-button>
 						</view>
-
-					</van-col>
-				</van-row>
+					</view>
+					<!-- {{status[item.status]}} -->
+				</view>
+				<view class="detail-container" hidden="{{item.showDetail}}">
+					<view class="detail-content" wx:for="{{item.cartItems}}" wx:key="idx">
+						<view class="detail-item1">{{item.goods_name}}</view>
+						<view>{{item.goods_price}}</view>
+						<view>×{{item.counts}}</view>
+						<!-- <view>{{item.sum}}</view> -->
+					</view>
+					<view class="detail-counts-con">总计： <span class="detail-costs">{{item.allPrice}}</span></view>
+				</view>
 			</view>
+
 		</van-tab>
 		<van-tab title="已完成">
-			<view class="order-pannel-con" wx:if="{{item.statusCode == 3}}" wx:for="{{allOrderLists}}">
-				<van-row gutter="10">
-					<van-col span="8">
-						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
-					</van-col>
-					<van-col span="8">
-						<view class="order-intro">时间</view>
-						<view class="order-context">{{item.bookTime}}</view>
-					</van-col>
-					<van-col span="3">
-						<view class="order-intro">总价</view>
-						<view class="order-context">{{item.allPrice}}</view>
-					</van-col>
-					<van-col span="5">
-						<view class="order-intro">状态</view>
-						<view class="order-context">
+			<view wx:for="{{allOrderLists}}" wx:key="index" wx:if="{{item.statusCode == 3}}">
+				<view class="order-pannel-con">
+					<van-row gutter="10">
+						<van-col span="8">
+							<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+						</van-col>
+						<van-col span="8">
+							<view class="order-intro">时间</view>
+							<view class="order-context">{{item.bookTime}}</view>
+						</van-col>
+						<van-col span="3">
+							<view class="order-intro">总价</view>
+							<view class="order-context">{{item.allPrice}}</view>
+						</van-col>
+						<van-col span="5">
+							<view class="order-intro order-statu-spec">状态</view>
+							<view class="order-context order-statu-spec">
+								<van-circle value="{{ 100*item.statusCode/3 > 100 ? 0: 100*item.statusCode/3 }}" size="50" layer-color="lightGray" text="{{status[item.statusCode]}}" color="{{gradientColor[item.statusCode-1]}}" />
 
-							<van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag>
+							</view>
+						</van-col>
+					</van-row>
+					<view class="edit-container">
+						<view class="edit-more" bindtap="showSpecDetails" data-index="{{index}}">{{item.showDetail ? '>' : 'v'}}</view>
+						<view class="edit-del" wx:if="{{item.statusCode == 1}}">
+							<van-button size="mini" type="warning">取消订单</van-button>
 						</view>
-
-					</van-col>
-				</van-row>
+					</view>
+					<!-- {{status[item.status]}} -->
+				</view>
+				<view class="detail-container" hidden="{{item.showDetail}}">
+					<view class="detail-content" wx:for="{{item.cartItems}}" wx:key="idx">
+						<view class="detail-item1">{{item.goods_name}}</view>
+						<view>{{item.goods_price}}</view>
+						<view>×{{item.counts}}</view>
+						<!-- <view>{{item.sum}}</view> -->
+					</view>
+					<view class="detail-counts-con">总计： <span class="detail-costs">{{item.allPrice}}</span></view>
+				</view>
 			</view>
+
 		</van-tab>
 
-			<van-tab title="已取消">
-			<view class="order-pannel-con" wx:if="{{item.statusCode == 4}}" wx:for="{{allOrderLists}}">
-				<van-row gutter="10">
-					<van-col span="8">
-						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
-					</van-col>
-					<van-col span="8">
-						<view class="order-intro">时间</view>
-						<view class="order-context">{{item.bookTime}}</view>
-					</van-col>
-					<van-col span="3">
-						<view class="order-intro">总价</view>
-						<view class="order-context">{{item.allPrice}}</view>
-					</van-col>
-					<van-col span="5">
-						<view class="order-intro">状态</view>
-						<view class="order-context">
+		<van-tab title="已取消">
+			<view wx:for="{{allOrderLists}}" wx:key="index" wx:if="{{item.statusCode == 4}}">
+				<view class="order-pannel-con">
+					<van-row gutter="10">
+						<van-col span="8">
+							<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+						</van-col>
+						<van-col span="8">
+							<view class="order-intro">时间</view>
+							<view class="order-context">{{item.bookTime}}</view>
+						</van-col>
+						<van-col span="3">
+							<view class="order-intro">总价</view>
+							<view class="order-context">{{item.allPrice}}</view>
+						</van-col>
+						<van-col span="5">
+							<view class="order-intro order-statu-spec">状态</view>
+							<view class="order-context order-statu-spec">
+								<van-circle value="{{ 100*item.statusCode/3 > 100 ? 0: 100*item.statusCode/3 }}" size="50" layer-color="lightGray" text="{{status[item.statusCode]}}" color="{{gradientColor[item.statusCode-1]}}" />
 
-							<van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag>
+							</view>
+						</van-col>
+					</van-row>
+					<view class="edit-container">
+						<view class="edit-more" bindtap="showSpecDetails" data-index="{{index}}">{{item.showDetail ? '>' : 'v'}}</view>
+						<view class="edit-del" wx:if="{{item.statusCode == 1}}">
+							<van-button size="mini" type="warning">取消订单</van-button>
 						</view>
-
-					</van-col>
-				</van-row>
+					</view>
+					<!-- {{status[item.status]}} -->
+				</view>
+				<view class="detail-container" hidden="{{item.showDetail}}">
+					<view class="detail-content" wx:for="{{item.cartItems}}" wx:key="idx">
+						<view class="detail-item1">{{item.goods_name}}</view>
+						<view>{{item.goods_price}}</view>
+						<view>×{{item.counts}}</view>
+						<!-- <view>{{item.sum}}</view> -->
+					</view>
+					<view class="detail-counts-con">总计： <span class="detail-costs">{{item.allPrice}}</span></view>
+				</view>
 			</view>
+
 		</van-tab>
+
 	</van-tabs>
 </view>

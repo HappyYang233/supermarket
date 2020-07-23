@@ -4,7 +4,7 @@
   
 }
 .info-bg {
-  background-color: brown;
+  background-color: #CC3333;
   height: 500rpx;
   border-radius: 0rpx 0rpx 100rpx 100rpx;
 }
@@ -32,10 +32,11 @@
 .help-items {
   height: 100rpx;
   line-height: 40rpx;
-  color: brown;
+  /* color: #CC3333; */
   text-align: center;
-  
+  font-size: 1.5em;
 }
+
 .service-items-des {
   font-size: 0.5em;
   color: darkgrey;

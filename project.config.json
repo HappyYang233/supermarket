@@ -107,6 +107,13 @@
 					"id": -1,
 					"name": "pages/orderlist/orderlist",
 					"pathName": "pages/orderlist/orderlist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myinfo/myinfo",
+					"pathName": "pages/myinfo/myinfo",
 					"scene": null
 				}
 			]

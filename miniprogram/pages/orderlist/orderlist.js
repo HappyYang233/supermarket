@@ -52,9 +52,10 @@ Page({
   data: {
     activePage: 0,
     allOrderLists: [],
-    status: ['','待发货', '配送中', '已完成','已取消'],
-    tagTypeX: ['','primary', 'warning', 'success','danger'],
-    thisPageISshow: true
+    status: ['', '待发货', '配送中', '已完成', '已取消'],
+    tagTypeX: ['', 'primary', 'warning', 'success', 'danger'],
+    thisPageISshow: true,
+    gradientColor: ['#FF6666','#FF3333','#ff0000',]
   },
 
   tabOnChange(event) {
@@ -64,15 +65,26 @@ Page({
     });
     console.log(event)
   },
-
+  showSpecDetails(e) {
+    const index = e.currentTarget.dataset.index
+    const raw = this.data.allOrderLists
+    raw[index].showDetail =!raw[index].showDetail
+    this.setData({
+      allOrderLists: raw
+    })
+  },
   // 获取所有的订单
   getAllorderLists() {
     db.collection('history').get({
       // res.data[0].goodsCate
       success: res => {
         // console.log(res)
+        const result = res.data
+        result.forEach(ele => {
+          ele.showDetail = true
+        })
         this.setData({
-          allOrderLists: res.data
+          allOrderLists: result
         })
       }
     })

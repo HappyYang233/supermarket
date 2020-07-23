@@ -1,0 +1,133 @@
+<!--pages/orderlist/orderlist.wxml-->
+<view class="order-list-container" wx:if="{{thisPageISshow}}">
+	<van-tabs active="{{ activePage }}" bind:change="tabOnChange">
+		<van-tab title="全部">
+			<view class="order-pannel-con" wx:for="{{allOrderLists}}">
+				<van-row gutter="10">
+					<van-col span="8">
+						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+					</van-col>
+					<van-col span="8">
+						<view class="order-intro">时间</view>
+						<view class="order-context">{{item.bookTime}}</view>
+					</van-col>
+					<van-col span="3">
+						<view class="order-intro">总价</view>
+						<view class="order-context">{{item.allPrice}}</view>
+					</van-col>
+					<van-col span="5">
+						<view class="order-intro">状态</view>
+						<view class="order-context">
+						<van-circle value="{{ 30 }}" size="50" layer-color="darkgrey" text="text" />
+							<!-- <van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag> -->
+						</view>
+
+					</van-col>
+				</van-row>
+				<!-- {{status[item.status]}} -->
+
+			</view>
+		</van-tab>
+		<van-tab title="待发货">
+			<view class="order-pannel-con" wx:if="{{item.statusCode == 1}}" wx:for="{{allOrderLists}}">
+				<van-row gutter="10">
+					<van-col span="8">
+						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+					</van-col>
+					<van-col span="8">
+						<view class="order-intro">时间</view>
+						<view class="order-context">{{item.bookTime}}</view>
+					</van-col>
+					<van-col span="3">
+						<view class="order-intro">总价</view>
+						<view class="order-context">{{item.allPrice}}</view>
+					</van-col>
+					<van-col span="5">
+						<view class="order-intro">状态</view>
+						<view class="order-context">
+
+							<van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag>
+						</view>
+
+					</van-col>
+				</van-row>
+			</view>
+		</van-tab>
+		<van-tab title="配送中">
+			<view class="order-pannel-con" wx:if="{{item.statusCode == 2}}" wx:for="{{allOrderLists}}">
+				<van-row gutter="10">
+					<van-col span="8">
+						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+					</van-col>
+					<van-col span="8">
+						<view class="order-intro">时间</view>
+						<view class="order-context">{{item.bookTime}}</view>
+					</van-col>
+					<van-col span="3">
+						<view class="order-intro">总价</view>
+						<view class="order-context">{{item.allPrice}}</view>
+					</van-col>
+					<van-col span="5">
+						<view class="order-intro">状态</view>
+						<view class="order-context">
+
+							<van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag>
+						</view>
+
+					</van-col>
+				</van-row>
+			</view>
+		</van-tab>
+		<van-tab title="已完成">
+			<view class="order-pannel-con" wx:if="{{item.statusCode == 3}}" wx:for="{{allOrderLists}}">
+				<van-row gutter="10">
+					<van-col span="8">
+						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+					</van-col>
+					<van-col span="8">
+						<view class="order-intro">时间</view>
+						<view class="order-context">{{item.bookTime}}</view>
+					</van-col>
+					<van-col span="3">
+						<view class="order-intro">总价</view>
+						<view class="order-context">{{item.allPrice}}</view>
+					</van-col>
+					<van-col span="5">
+						<view class="order-intro">状态</view>
+						<view class="order-context">
+
+							<van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag>
+						</view>
+
+					</van-col>
+				</van-row>
+			</view>
+		</van-tab>
+
+			<van-tab title="已取消">
+			<view class="order-pannel-con" wx:if="{{item.statusCode == 4}}" wx:for="{{allOrderLists}}">
+				<van-row gutter="10">
+					<van-col span="8">
+						<image class="order-img-container" src="{{item.cartItems[0].pic}}"></image>
+					</van-col>
+					<van-col span="8">
+						<view class="order-intro">时间</view>
+						<view class="order-context">{{item.bookTime}}</view>
+					</van-col>
+					<van-col span="3">
+						<view class="order-intro">总价</view>
+						<view class="order-context">{{item.allPrice}}</view>
+					</van-col>
+					<van-col span="5">
+						<view class="order-intro">状态</view>
+						<view class="order-context">
+
+							<van-tag mark type="{{tagTypeX[item.statusCode]}}">{{status[item.statusCode]}}</van-tag>
+						</view>
+
+					</van-col>
+				</van-row>
+			</view>
+		</van-tab>
+	</van-tabs>
+</view>
