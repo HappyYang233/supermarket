@@ -65,6 +65,15 @@
   right: 40rpx;
   top: 10rpx;
 }
+.good-extra .add-circle{
+  height: 50rpx;
+  width: 50rpx;
+  
+}
+.good-extra .add-icon{
+  height: 50rpx;
+  width: 50rpx;
+}
 .good-extra-stock {
   height: 40rpx;
   line-height: 40rpx;

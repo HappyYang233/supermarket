@@ -28,8 +28,7 @@
 				<view class="weui-grids">
 					<van-card bindtap="tapForGoods"  data-item="{{item}}" wx:for="{{item.goodsList}}" tag="热销" price="{{item.goods_price}}" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
 						<view class="good-extra" slot="footer">
-							<!-- <view class="good-extra-stock">库存：{{item.goods_inventory}}</view> -->
-							<van-button size="mini" catchtap="onAddGood" data-pickedgood="{{item}}">+</van-button>
+							<view class="good-extra-stock">库存：{{item.goods_inventory}}</view>
 						</view>
 					</van-card>
 				</view>
