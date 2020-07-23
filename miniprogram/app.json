@@ -52,7 +52,9 @@
     "van-notice-bar": "@vant/weapp/notice-bar/index",
     "van-grid": "@vant/weapp/grid/index",
     "van-grid-item": "@vant/weapp/grid-item/index",
-    "van-search": "@vant/weapp/search/index"
+    "van-search": "@vant/weapp/search/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-toast": "@vant/weapp/toast/index"
   },
   "tabBar": {
     "color": "#999",

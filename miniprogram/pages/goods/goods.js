@@ -1,4 +1,4 @@
-// miniprogram/pages/goods/goods.js
+
 import {
   checkLogin
 } from "../../util/comom"
@@ -294,14 +294,26 @@ Page({
       });
 
     } else {
-      wx.navigateTo({
-        url: '../pay/pay',
-        success: (result) => {
-
-        },
-        fail: () => {},
-        complete: () => {}
-      });
+      let shopCart = wx.getStorageSync('shopCart')||[];
+      console.log("12");
+      if(shopCart.length===0)
+      {
+        wx.showToast({
+          title: '"请先选购商品哦，大爷！！！"',
+          icon:"none"
+        })
+      }
+      else{
+        wx.navigateTo({
+          url: '../pay/pay',
+          success: (result) => {
+  
+          },
+          fail: () => {},
+          complete: () => {}
+        });
+      }
+      
 
       //继续流程
     }

@@ -73,7 +73,7 @@
 				合计: <text class="total_price_text">{{shopCartLists.sumPrice}} 元</text>
 			</view>
 
-			<view class="list-buy" bindtap="handlePay">
+			<view class="list-buy" bindtap="handlePay" >
 				<van-button round type="danger" size="small">结 算</van-button>
 			</view>
 		</view>
@@ -98,4 +98,6 @@
 		</view>
 		</view>
 	</van-dialog>
+	<!-- <van-notify id="van-notify" /> -->
+	<van-toast id="van-toast" />
 </view>
