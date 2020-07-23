@@ -114,6 +114,13 @@
 					"id": -1,
 					"name": "pages/myinfo/myinfo",
 					"pathName": "pages/myinfo/myinfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
 					"scene": null
 				}
 			]

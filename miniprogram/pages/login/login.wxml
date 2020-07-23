@@ -1,8 +1,29 @@
 <!--pages/login/login.wxml-->
-<view class="wrap">
+<!-- <view class="wrap">
  
     <image class="" src="../../images/zhongxin.jpg" mode="scaleToFill" lazy-load="false" binderror="" bindload="" />
     <button open-type="getUserInfo"  type="primary" bindgetuserinfo="handleGetUserInfo">微信授权登录</button>
     
       
- </view>
+ </view> -->
+ <view class="logo">
+    <image src='/static/girl.jpg'></image>
+    <text>天投超市</text>
+  </view>
+  
+  <view class="form">
+    <view class="row-group">
+      <text>用户名</text>
+      <input placeholder="请填写用户名" placeholder-class='txt' maxlength='11' value="{{username}}" bindinput="bindUsernameInput" />
+    </view>
+  
+     <view class="row-group">
+      <text>密码</text>
+      <input placeholder="请填写密码" placeholder-class='txt' maxlength='12' value="{{password}}" bindinput="bindpasswordInput" />
+      <!-- <view class="code" bindtap="onClickCheckCode">获取验证码</view> -->
+    </view>
+  
+    <view>
+      <button class="submit"  open-type="getUserInfo" bindgetuserinfo="onClickSubmit" bindtap="login"> 登录 | 注册</button>
+    </view>
+  </view>

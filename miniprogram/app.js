@@ -17,6 +17,8 @@ App({
     }
 
     this.globalData = {
+      username:"admin",
+      password:"admin",
       Token:null,
       address:"天府新区新经济产业园区D区A1号楼",
       userPhone: '177****2233',
