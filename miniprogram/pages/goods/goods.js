@@ -11,7 +11,6 @@ Page({
     searchStr: '',
     goodDetailShow: false,
     buyResult: [],
-    selectIndex: 0,
     shopCartLists: {},
     CartListShow: false,
     selectIndex: 0,
@@ -229,7 +228,7 @@ Page({
 
         let key = 'allGoodsListsRaw[' + rect.dataset.id + '].top'
         _this.setData({
-          [key]: rect.top - 100 // 上方搜索栏100
+          [key]: rect.top - 109 // 上方搜索栏100
         })
       })
 
