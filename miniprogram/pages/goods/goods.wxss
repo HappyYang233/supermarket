@@ -7,25 +7,39 @@
   width: 100%;
   background-color: #ddd;
   line-height: 80rpx;
-  color: red;
+  color: #ff0000;
   position: fixed;
   z-index: 100;
+}
+.title {
+  display: flex;
+  height: 60px;
+}
+
+.top-left {
+  height: 60px;
+  width: 60px;
 }
 .title {
   height: 80rpx;
   width: 640rpx;
   margin: 0 auto;
-  padding-left: 20rpx;
-  padding-right: 20rpx;
+}
+.color-text {
+
+}
+.color-address {
+  font-size: 0.5em;
+  color: #646566
 }
 .title span{
   margin-left: 20rpx;
   line-height: 80rpx;
-  color: red;
+  /* color: #ff0000; */
 }
 .search-box {
   width: 640rpx;
-  margin: 0 auto;
+  margin: 0rpx auto;
 }
 .index-name {
   background-color: #fafafa;
@@ -63,7 +77,11 @@
 .good-extra {
   position: absolute;
   right: 40rpx;
-  top: 10rpx;
+  top: 70rpx;
+}
+.t-icon-tianjia-copy {
+  width: 24px;
+  height: 24px;
 }
 .good-extra-stock {
   height: 40rpx;

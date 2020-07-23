@@ -53,14 +53,11 @@
     "van-grid": "@vant/weapp/grid/index",
     "van-grid-item": "@vant/weapp/grid-item/index",
     "van-search": "@vant/weapp/search/index",
-<<<<<<< HEAD
     "van-circle": "@vant/weapp/circle/index",
     "van-collapse": "@vant/weapp/collapse/index",
-    "van-collapse-item": "@vant/weapp/collapse-item/index"
-=======
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
     "van-notify": "@vant/weapp/notify/index",
     "van-toast": "@vant/weapp/toast/index"
->>>>>>> 3daeb7297074d8aaefea7795af244fd643afe71d
   },
   "tabBar": {
     "color": "#999",

@@ -1,15 +1,15 @@
 <view class="wrapper">
 	<view class="top">
 		<view class="title">
-			<span class="color-text">天投超市 </span>
-			天府D区
+			<!-- <view class="top-left">
+				<cover-image src="https://s1.ax1x.com/2020/07/23/UL7iHH.jpg"></cover-image>
+			</view> -->
+			<view>
+				<span class="color-text">天投超市 </span>
+				<span class="color-address">地址：天府新区天府新经济产业园</span>
+			</view>
 		</view>
 		<view class="search-box">
-			<!-- <van-cell-group>
-				<van-field value="{{ sms }}" bind:change="inputOnChange" center clearable placeholder="请输入商品名称" border="{{ false }}" use-button-slot>
-					<van-button slot="button"  bind:click="searchAction" size="small" type="primary">搜索</van-button>
-				</van-field>
-			</van-cell-group> -->
 			<van-search shape="round" bind:search="searchAction" bind:change="inputOnChange" background="#ddd" value="{{ value }}" placeholder="请输入搜索关键词" />
 		</view>
 	</view>
@@ -20,16 +20,18 @@
 				<van-sidebar-item title="{{item.name}}" wx:for="{{leftMenuList}}" wx:key="index" />
 			</van-sidebar>
 		</view>
-		<scroll-view  class="good-content-right" scroll-y="true" bindscroll="scroll" scroll-with-animation="true" scroll-into-view="{{'index'+active_index}}">
+		<scroll-view class="good-content-right" scroll-y="true" bindscroll="scroll" scroll-with-animation="true" scroll-into-view="{{'index'+active_index}}">
 
-			<block wx:for="{{allGoodsLists}}" wx:key="index" >
+			<block wx:for="{{allGoodsLists}}" wx:key="index">
 
 				<view id="index{{index}}" class="index-name" data-id="{{index}}"></view>
 				<view class="weui-grids">
-					<van-card bindtap="tapForGoods"  data-item="{{item}}" wx:for="{{item.goodsList}}" tag="热销" price="{{item.goods_price}}" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
+					<van-card bindtap="tapForGoods" data-item="{{item}}" wx:for="{{item.goodsList}}" tag="热销" price="{{item.goods_price}}" desc="{{item.goods_des}}" title="{{item.goods_name}}" thumb="{{ item.pic }}">
 						<view class="good-extra" slot="footer">
 							<!-- <view class="good-extra-stock">库存：{{item.goods_inventory}}</view> -->
-							<van-button size="mini" catchtap="onAddGood" data-pickedgood="{{item}}">+</van-button>
+							<!-- <van-button size="mini" catchtap="onAddGood" data-pickedgood="{{item}}">+</van-button> -->
+							<cover-view catchtap="onAddGood" data-pickedgood="{{item}}" class="t-icon t-icon-tianjia-copy">
+							</cover-view>
 						</view>
 					</van-card>
 				</view>
@@ -47,7 +49,7 @@
 			</view>
 		</view>
 		<view class="order_pay_wrap" bindtap="handlePay">
-			<van-button round type="danger" size="small">结 算</van-button>
+			<van-button round color="#ff0000" size="small">结 算</van-button>
 		</view>
 	</view>
 
@@ -73,29 +75,29 @@
 				合计: <text class="total_price_text">{{shopCartLists.sumPrice}} 元</text>
 			</view>
 
-			<view class="list-buy" bindtap="handlePay" >
-				<van-button round type="danger" size="small">结 算</van-button>
+			<view class="list-buy" bindtap="handlePay">
+				<van-button round color="#ff0000" size="small">结 算</van-button>
 			</view>
 		</view>
 
 	</van-popup>
-	<van-dialog use-slot title="商品详情" show="{{ goodDetailShow }}" show-cancel-button cancelButtonText="关闭" show-confirm-button="{{false}}" >
+	<van-dialog use-slot title="商品详情" show="{{ goodDetailShow }}" show-cancel-button cancelButtonText="关闭" show-confirm-button="{{false}}">
 		<image src="{{pickedGoodDeatil.pic}}" />
 		<view class="detail-content">
-		 <view>
-		 	商品名：{{pickedGoodDeatil.goods_name}}
-		</view>
-		<view>
-			价格：{{pickedGoodDeatil.goods_price}}
-		</view>
-		<view>
-			描述：{{pickedGoodDeatil.goods_des}}
-		</view>
-		<view class="dialog-good-btn">
-			<!-- <van-button round type="danger" size="small" bindtap="onAddGood" data-pickedgood="{{pickedGoodDeatil}}">+</van-button>
+			<view>
+				商品名：{{pickedGoodDeatil.goods_name}}
+			</view>
+			<view>
+				价格：{{pickedGoodDeatil.goods_price}}
+			</view>
+			<view>
+				描述：{{pickedGoodDeatil.goods_des}}
+			</view>
+			<view class="dialog-good-btn">
+				<!-- <van-button round type="danger" size="small" bindtap="onAddGood" data-pickedgood="{{pickedGoodDeatil}}">+</van-button>
 			{{current}}
 				<van-button round type="danger" size="small" bindtap="onAddGood" data-pickedgood="{{pickedGoodDeatil}}">-</van-button> -->
-		</view>
+			</view>
 		</view>
 	</van-dialog>
 	<!-- <van-notify id="van-notify" /> -->
